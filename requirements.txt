@@ -1,0 +1,3 @@
+# Scraper is stdlib-only by design (urllib, gzip, json, csv).
+# Test dependencies:
+pytest>=8.0
