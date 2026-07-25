@@ -57,7 +57,10 @@
   Product names are in Bahasa Malaysia, as published.</p>
 </footer>
 
-<script src="assets/echarts.min.js"></script>
-<script src="assets/app.js"></script>
+<!-- Both deferred: echarts.min.js is ~1 MB and must not block first paint (Overview
+     has no chart at all). Deferred scripts execute in document order, so echarts is
+     still defined before app.js runs, and both run after the DOM is parsed. -->
+<script defer src="assets/echarts.min.js"></script>
+<script defer src="assets/app.js"></script>
 </body>
 </html>

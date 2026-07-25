@@ -279,14 +279,37 @@ select.field { padding-right: 26px; }
 .tile__value { font-size: 1.5rem; font-weight: 600; letter-spacing: -0.02em; margin-top: 4px; }
 .tile__value--empty { color: var(--text-muted); font-size: 1.125rem; font-weight: 500; }
 .tile__delta { font-size: 0.75rem; margin-top: 2px; }
+.tile__deltakey {
+  display: inline-block; min-width: 3.4em;
+  color: var(--text-muted); font-size: 0.6875rem;
+}
 
 /* ------------------------------------------------------------- deltas ----- */
+.deltawrap { display: inline-block; }
 .delta { font-variant-numeric: tabular-nums; white-space: nowrap; }
 .delta[data-dir="up"] { color: var(--delta-up); }
 .delta[data-dir="down"] { color: var(--delta-down); }
 .delta[data-dir="flat"], .delta[data-dir="na"] { color: var(--delta-flat); }
 .delta[data-dir="na"] { color: var(--text-muted); }
 .delta__arrow { font-size: 0.85em; }
+
+/* "vs 23 Jul" — the comparison date travels with every change figure, because the
+   gap to the previous reading is data, not a fixed one-day/seven-day promise. */
+.delta__vs {
+  margin-left: 6px; white-space: nowrap;
+  font-size: 0.6875rem; font-weight: 400; letter-spacing: 0;
+  color: var(--text-muted); font-variant-numeric: normal;
+}
+
+/* muted reading-date chip — shown only when a reading is older than the
+   headline date, so an unremarkable row carries no extra ink at all */
+.datechip {
+  display: inline-block; margin-left: 5px; vertical-align: middle;
+  padding: 0 6px; border-radius: 999px;
+  font-size: 0.6875rem; font-weight: 400; line-height: 1.6; letter-spacing: 0;
+  white-space: nowrap; font-variant-numeric: normal;
+  color: var(--text-muted); background: var(--ghost);
+}
 
 /* -------------------------------------------------------------- table ----- */
 .tablewrap { overflow-x: auto; }

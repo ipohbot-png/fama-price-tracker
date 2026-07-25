@@ -1,10 +1,20 @@
 /* FAMA Price Tracker — dashboard app.
  * Static, no build step. Hash routing. Relative paths only (GitHub Pages subpath).
  *
- * Contract B (see DESIGN.md §4) is the data contract. One assumption this UI makes
- * that the contract leaves open: `dod` / `wow` in latest.json are ABSOLUTE RM changes
- * (price minus the comparison day's price). Percentages are derived as
- * dod / (price - dod). If the aggregator emits percentages instead, change fmtDelta().
+ * Contract B v2 (DESIGN.md §4):
+ *   latest.json and latest_state/<STATE>.json share one shape:
+ *     { date: <headline archive date>, rows: [{ id, name, unit, level, price,
+ *       date, n, dod, dod_from, wow, wow_from, reliable }] }
+ *   - `date` on a ROW is that reading's own date and MAY be older than the
+ *     document's headline `date`. The UI discloses it whenever they differ.
+ *   - `dod` / `wow` are ABSOLUTE RM changes against the readings dated `dod_from`
+ *     / `wow_from`. Those gaps are NOT guaranteed to be 1 and 7 days, so the UI
+ *     labels every change "vs <date>" and never claims "day on day".
+ *   - `n` = number of market rows behind the mean.
+ *   - `reliable:false` = the comparison is distorted by a basket change; the row
+ *     stays in the table but is excluded from Top Movers.
+ *   catalog.json products carry only { id, name, kategori, unit, grades }.
+ * Percentages are derived as dod / (price - dod).
  */
 (function () {
   'use strict';
@@ -94,6 +104,7 @@
     return Number(p[2]) + ' ' + MONTHS[Number(p[1]) - 1] + ' ' + p[0];
   }
   function fmtDateShort(iso) {
+    if (!iso) return '—';
     var p = String(iso).split('-');
     if (p.length !== 3) return iso;
     return Number(p[2]) + ' ' + MONTHS[Number(p[1]) - 1];
@@ -102,6 +113,12 @@
     var a = Date.parse(aIso + 'T00:00:00Z'), b = Date.parse(bIso + 'T00:00:00Z');
     if (isNaN(a) || isNaN(b)) return null;
     return Math.round((b - a) / 86400000);
+  }
+  /* Calendar arithmetic on ISO dates — the 7-day rule is days, not array steps. */
+  function shiftDays(iso, delta) {
+    var t = Date.parse(iso + 'T00:00:00Z');
+    if (isNaN(t)) return null;
+    return new Date(t + delta * 86400000).toISOString().slice(0, 10);
   }
   function todayIso() {
     var d = new Date();
@@ -118,27 +135,66 @@
     var dir = abs > 0.0049 ? 'up' : (abs < -0.0049 ? 'down' : 'flat');
     return { dir: dir, pct: pct, abs: abs };
   }
-  function deltaCell(abs, price, periodLabel) {
+
+  function gapPhrase(fromIso, atIso) {
+    if (!fromIso || !atIso) return '';
+    var g = daysBetween(fromIso, atIso);
+    if (g == null) return '';
+    return ' (' + g + ' day' + (g === 1 ? '' : 's') + ' earlier)';
+  }
+
+  /* ONE honest phrasing for every change figure in the app.
+     opts = { from: 'YYYY-MM-DD'|null,   // dod_from / wow_from — the ACTUAL comparison date
+              at:   'YYYY-MM-DD'|null,   // the reading's own date
+              kind: 'prev' | 'week' }    // only used to word the "nothing to compare" title
+     The visible label is "vs 23 Jul", never "day on day" — the source guarantees
+     neither a 1-day nor a 7-day gap, so the UI states the date, not a period. */
+  function deltaCell(abs, price, opts) {
+    opts = opts || {};
+    var kindWord = opts.kind === 'week' ? 'about a week back' : 'an earlier day';
     var d = deltaInfo(abs, price);
     if (d.dir === 'na') {
-      return h('span', { class: 'delta', 'data-dir': 'na', text: '—', title: 'No comparison day available' });
+      return h('span', {
+        class: 'delta', 'data-dir': 'na', text: '—',
+        title: 'No reading from ' + kindWord + ' to compare against'
+      });
     }
     var arrow = d.dir === 'up' ? '▲' : d.dir === 'down' ? '▼' : '–';
     var word = d.dir === 'up' ? 'up' : d.dir === 'down' ? 'down' : 'unchanged';
     var pctTxt = d.pct == null ? '' : (d.pct > 0 ? '+' : '') + d.pct.toFixed(1) + '%';
     var absTxt = (d.abs > 0 ? '+' : '') + d.abs.toFixed(2);
-    var wrap = h('span', null, [
-      h('span', {
-        class: 'delta', 'data-dir': d.dir,
-        title: word + ' ' + absTxt + ' RM ' + (periodLabel || '')
-      }, [
+    var vsTxt = opts.from ? 'vs ' + fmtDateShort(opts.from) : '';
+    var full = word + ' ' + absTxt + ' RM' + (opts.from
+      ? ' versus the reading of ' + fmtDate(opts.from) + gapPhrase(opts.from, opts.at)
+      : ' — no comparison date published');
+
+    return h('span', { class: 'deltawrap' }, [
+      h('span', { class: 'delta', 'data-dir': d.dir, title: full }, [
         h('span', { class: 'delta__arrow', 'aria-hidden': 'true', text: arrow }),
         ' ' + (pctTxt || absTxt)
       ]),
       pctTxt ? h('span', { class: 'muted num', text: ' ' + absTxt }) : null,
-      h('span', { class: 'sr-only', text: ' ' + word + ' ' + absTxt + ' ringgit ' + (periodLabel || '') })
+      vsTxt ? h('span', { class: 'delta__vs', title: full, text: vsTxt }) : null,
+      h('span', { class: 'sr-only', text: ' ' + full + '. ' })
     ]);
-    return wrap;
+  }
+
+  /* Muted date chip — discloses a reading date that is OLDER than the headline
+     date. Returns null when there is nothing worth disclosing. */
+  function dateChip(iso, headlineIso) {
+    if (!iso || !headlineIso || iso === headlineIso) return null;
+    var gap = daysBetween(iso, headlineIso);
+    return h('span', {
+      class: 'datechip', text: fmtDateShort(iso),
+      title: 'Reading of ' + fmtDate(iso) +
+        (gap ? ' — ' + gap + ' day' + (gap === 1 ? '' : 's') + ' before ' + fmtDate(headlineIso) : '')
+    });
+  }
+
+  /* "22 markets" — how many source rows are behind a mean. */
+  function nLabel(n) {
+    if (n == null || isNaN(n)) return null;
+    return Number(n) === 1 ? '1 market' : Number(n) + ' markets';
   }
 
   // ---------------------------------------------------------------- theming --
@@ -176,61 +232,51 @@
     return seriesCache[slug];
   }
 
-  /* Perak (or any state) overview is derived from the per-product series files,
-     because Contract B's latest.json carries national figures only. Concurrency-
-     limited + cached; see the README note about an optional latest_state/*.json. */
-  function loadStateLatest(stateName, onProgress) {
-    if (stateLatestCache[stateName]) return stateLatestCache[stateName];
-    var products = store.catalog.products;
-    var out = [], maxDate = null, done = 0, i = 0, LIMIT = 6;
-
-    function pump(resolve, reject) {
-      if (i >= products.length) return;
-      var p = products[i++];
-      loadSeries(p.id).then(function (doc) {
-        var st = (doc.by_state || {})[stateName];
-        if (st) {
-          LEVELS.forEach(function (lv) {
-            var arr = st[lv];
-            if (!arr) return;
-            var r = pointsFor(doc.dates, arr);
-            if (r.price == null) return;
-            if (!maxDate || r.date > maxDate) maxDate = r.date;
-            out.push({
-              id: p.id, name: doc.name || p.name, unit: doc.unit || p.unit,
-              level: lv, price: r.price, dod: r.dod, wow: r.wow, date: r.date
-            });
-          });
-        }
-      }).catch(function () { /* a missing series file just means no row */ })
-        .then(function () {
-          done++;
-          if (onProgress) onProgress(done, products.length);
-          if (done === products.length) resolve({ date: maxDate, rows: out, derived: true });
-          else pump(resolve, reject);
-        });
+  /* State scope reads the aggregator's per-state snapshot — same shape as
+     latest.json (Contract B v2). ONE request; no series scanning, no fallback.
+     If the file is missing the caller shows the standard error card. */
+  function loadStateLatest(stateName) {
+    if (!stateLatestCache[stateName]) {
+      stateLatestCache[stateName] =
+        getJSON(DATA + 'latest_state/' + encodeURIComponent(stateName) + '.json');
     }
-
-    stateLatestCache[stateName] = new Promise(function (resolve, reject) {
-      if (!products.length) return resolve({ date: null, rows: [], derived: true });
-      for (var n = 0; n < LIMIT; n++) pump(resolve, reject);
-    });
     return stateLatestCache[stateName];
   }
 
-  /* latest non-null value + change vs previous available day and vs ~7 days back */
+  /* Latest non-null reading of a series, plus the two changes the UI shows.
+     Both comparisons are CALENDAR based and both carry their own date, matching
+     the aggregator's latest.json rule exactly (DESIGN.md §4):
+       dod / dod_from = the previous non-null point, whatever its date
+       wow / wow_from = the nearest non-null point dated on or before (date − 7 days);
+                        null when the archive has none — never a silent fallback to
+                        arr[0], which used to be mislabelled "week on week".
+     `dates` is ascending ISO and parallel to `arr`. */
   function pointsFor(dates, arr) {
     var idx = -1, i;
     for (i = arr.length - 1; i >= 0; i--) { if (arr[i] != null) { idx = i; break; } }
-    if (idx < 0) return { price: null, dod: null, wow: null, date: null };
-    var price = arr[idx], prev = null, wk = null;
-    for (i = idx - 1; i >= 0; i--) { if (arr[i] != null) { prev = arr[i]; break; } }
-    for (i = Math.max(0, idx - 7); i >= 0; i--) { if (arr[i] != null) { wk = arr[i]; break; } }
+    if (idx < 0) {
+      return { price: null, date: null, dod: null, dod_from: null, wow: null, wow_from: null };
+    }
+    var price = arr[idx], date = dates[idx];
+    var prev = null, prevFrom = null, wk = null, wkFrom = null;
+    for (i = idx - 1; i >= 0; i--) {
+      if (arr[i] != null) { prev = arr[i]; prevFrom = dates[i]; break; }
+    }
+    var cutoff = shiftDays(date, -7);
+    if (cutoff) {
+      for (i = idx - 1; i >= 0; i--) {
+        if (dates[i] > cutoff) continue;     // still inside the 7-day window
+        if (arr[i] == null) continue;        // no reading collected that day
+        wk = arr[i]; wkFrom = dates[i]; break;
+      }
+    }
     return {
       price: round2(price),
+      date: date,
       dod: prev == null ? null : round2(price - prev),
+      dod_from: prevFrom,
       wow: wk == null ? null : round2(price - wk),
-      date: dates[idx]
+      wow_from: wkFrom
     };
   }
   function round2(x) { return Math.round(x * 100) / 100; }
@@ -440,50 +486,73 @@
     root.appendChild(moversCard);
     root.appendChild(tableCard);
 
-    function paint(latest, loading, progress) {
+    function paint(latest) {
       clear(moversCard); clear(tableCard);
 
       if (!latest || !latest.rows || !latest.rows.length) {
-        clear(moversCard);
         moversCard.appendChild(empty('📭', 'No prices for ' + scopeLabel,
           'The archive has no readings for this scope yet. Switch back to All Malaysia.'));
-        tableCard.remove();
+        if (tableCard.parentNode) tableCard.parentNode.removeChild(tableCard);
         return;
       }
 
       var rows = overviewRows(latest);
       var focus = ui.focusLevel;
+      var headline = latest.date || null;
 
-      // ---- top movers strip (by DoD %, at the focus level)
-      var movers = [];
+      // ---- top movers strip: biggest change vs each row's OWN previous reading.
+      // reliable:false rows are excluded — their change reflects a changed basket
+      // of reporting markets, not a real price move. They stay in the table below.
+      var movers = [], suppressed = 0;
       rows.forEach(function (r) {
         var rec = r.levels[focus];
         if (!rec || rec.price == null || rec.dod == null) return;
         var d = deltaInfo(rec.dod, rec.price);
         if (d.pct == null || Math.abs(d.pct) < 0.05) return;
+        if (rec.reliable === false) { suppressed++; return; }
         movers.push({ row: r, rec: rec, pct: d.pct });
       });
       movers.sort(function (a, b) { return Math.abs(b.pct) - Math.abs(a.pct); });
-      var top = movers.slice(0, 10);
+      var top = movers.slice(0, 10);   // fewer than 3 is fine — we show what exists
 
       moversCard.appendChild(h('div', { class: 'card__head' }, [
         h('h2', { text: 'Top movers' }),
         h('span', { class: 'card__note',
-          text: 'Biggest day-on-day moves · ' + focus + ' (' + LEVEL_SUB[focus] + ') · ' + scopeLabel })
+          text: 'Biggest change vs each product’s previous reading · ' +
+            focus + ' (' + LEVEL_SUB[focus] + ') · ' + scopeLabel })
       ]));
+
       if (!top.length) {
         moversCard.appendChild(empty('😴', 'No movement',
-          'No product changed price at ' + focus + ' level since the previous reading.'));
+          'No product changed price at ' + focus + ' level since its previous reading.' +
+          (suppressed ? ' (' + suppressed + ' change' + (suppressed === 1 ? ' was' : 's were') +
+            ' set aside — the set of reporting markets changed.)' : '')));
       } else {
         moversCard.appendChild(h('div', { class: 'movers' }, top.map(function (m) {
-          return h('a', { class: 'mover', href: '#/p/' + encodeURIComponent(m.row.id) }, [
+          var meta = ['per ' + unitShort(m.row.unit), nLabel(m.rec.n)].filter(Boolean).join(' · ');
+          return h('a', {
+            class: 'mover', href: '#/p/' + encodeURIComponent(m.row.id),
+            title: m.row.name + ' — ' + fmtRM(m.rec.price, m.row.unit) +
+              ' on ' + fmtDate(m.rec.date) +
+              (nLabel(m.rec.n) ? ', mean of ' + nLabel(m.rec.n) : '')
+          }, [
             h('div', { class: 'mover__name', text: m.row.name }),
-            h('div', { class: 'mover__meta', text: 'per ' + unitShort(m.row.unit) }),
-            h('div', { class: 'mover__price num', text: fmtRM(m.rec.price) }),
+            h('div', { class: 'mover__meta', text: meta }),
+            h('div', { class: 'mover__price num' }, [
+              fmtRM(m.rec.price),
+              dateChip(m.rec.date, headline)
+            ]),
             h('div', { style: 'margin-top:2px;font-size:.8125rem' },
-              deltaCell(m.rec.dod, m.rec.price, 'day on day'))
+              deltaCell(m.rec.dod, m.rec.price,
+                { from: m.rec.dod_from, at: m.rec.date, kind: 'prev' }))
           ]);
         })));
+        if (suppressed) {
+          moversCard.appendChild(h('p', { class: 'card__note', style: 'margin:8px 0 0',
+            text: suppressed + ' product' + (suppressed === 1 ? '' : 's') +
+              ' left out: the set of reporting markets changed between the two readings, ' +
+              'so the difference would describe the basket, not the price.' }));
+        }
       }
 
       // ---- filter row (one row, above the table it scopes)
@@ -522,21 +591,15 @@
       tableCard.appendChild(tableHost);
       tableCard.appendChild(h('p', { class: 'card__note', style: 'margin:10px 0 0' },
         [
-          'Each cell shows that product’s most recent reading on or before ' + fmtDate(latest.date) +
-          '. Prices are means across all reporting markets. ',
+          'Each cell is that product’s most recent reading on or before ' + fmtDate(headline) +
+          '. A muted date beside a price means that reading is older than ' + fmtDate(headline) +
+          '. Prices are means across all reporting markets, and every change states the date ' +
+          'it is measured against — the gap is not always one day, or seven. ',
           h('span', { class: 'delta', 'data-dir': 'up', text: '▲ red' }),
           ' = price rose, ',
           h('span', { class: 'delta', 'data-dir': 'down', text: '▼ green' }),
           ' = price fell.'
         ]));
-
-      if (loading) {
-        tableCard.style.opacity = '0.55';   // hold the frame, no skeleton flash
-        tableCard.appendChild(h('p', { class: 'card__note',
-          text: 'Loading ' + scopeLabel + ' prices… ' + progress[0] + ' / ' + progress[1] }));
-      } else {
-        tableCard.style.opacity = '';
-      }
 
       function drawTable() {
         var q = ui.query.trim().toLowerCase();
@@ -580,8 +643,13 @@
         LEVELS.forEach(function (lv) {
           head.appendChild(sortTh(lv, lv, 'n', LEVEL_SUB[lv]));
         });
-        head.appendChild(sortTh('DoD', 'dod', 'n', ui.focusLevel));
-        head.appendChild(sortTh('WoW', 'wow', 'n', ui.focusLevel));
+        // Honest headers: the gap to the comparison reading is data, not a promise.
+        head.appendChild(sortTh('Δ prev', 'dod', 'n', ui.focusLevel,
+          'Change against this product’s previous reading, whenever that was — each cell ' +
+          'names the comparison date. Not necessarily one day.'));
+        head.appendChild(sortTh('Δ 7-day', 'wow', 'n', ui.focusLevel,
+          'Change against the nearest reading dated on or before seven calendar days earlier — ' +
+          'each cell names the comparison date. “—” means the archive has none.'));
         tbl.appendChild(h('thead', null, head));
 
         var tb = h('tbody');
@@ -594,27 +662,37 @@
           tr.appendChild(h('td', { class: 'c-unit muted', text: unitShort(r.unit) }));
           LEVELS.forEach(function (lv) {
             var rec = r.levels[lv];
-            tr.appendChild(h('td', {
-              class: 'n c-price', 'data-label': lv,
-              title: rec && rec.date ? 'Reading of ' + fmtDate(rec.date) : null,
-              text: rec && rec.price != null ? Number(rec.price).toFixed(2) : '—'
-            }));
+            var td = h('td', { class: 'n c-price', 'data-label': lv });
+            if (!rec || rec.price == null) {
+              td.appendChild(h('span', { class: 'muted', text: '—' }));
+            } else {
+              td.setAttribute('title', 'RM ' + Number(rec.price).toFixed(2) +
+                ' — reading of ' + fmtDate(rec.date) +
+                (nLabel(rec.n) ? ', mean of ' + nLabel(rec.n) : ''));
+              td.appendChild(document.createTextNode(Number(rec.price).toFixed(2)));
+              var chip = dateChip(rec.date, headline);
+              if (chip) td.appendChild(chip);
+            }
+            tr.appendChild(td);
           });
           var f = r.levels[ui.focusLevel];
-          tr.appendChild(h('td', { class: 'n c-change', 'data-label': 'DoD · ' + ui.focusLevel },
-            f ? deltaCell(f.dod, f.price, 'day on day') : h('span', { class: 'muted', text: '—' })));
-          tr.appendChild(h('td', { class: 'n c-change', 'data-label': 'WoW · ' + ui.focusLevel },
-            f ? deltaCell(f.wow, f.price, 'week on week') : h('span', { class: 'muted', text: '—' })));
+          tr.appendChild(h('td', { class: 'n c-change', 'data-label': 'Δ prev · ' + ui.focusLevel },
+            f ? deltaCell(f.dod, f.price, { from: f.dod_from, at: f.date, kind: 'prev' })
+              : h('span', { class: 'muted', text: '—' })));
+          tr.appendChild(h('td', { class: 'n c-change', 'data-label': 'Δ 7-day · ' + ui.focusLevel },
+            f ? deltaCell(f.wow, f.price, { from: f.wow_from, at: f.date, kind: 'week' })
+              : h('span', { class: 'muted', text: '—' })));
           tb.appendChild(tr);
         });
         tbl.appendChild(tb);
         tableHost.appendChild(h('div', { class: 'tablewrap' }, tbl));
       }
 
-      function sortTh(label, key, cls, sub) {
+      function sortTh(label, key, cls, sub, tip) {
         var active = ui.sort.key === key;
         var th = h('th', {
           class: 'sortable ' + (cls || ''),
+          title: tip || null,
           'aria-sort': active ? (ui.sort.dir === 1 ? 'ascending' : 'descending') : 'none',
           onclick: function () {
             if (ui.sort.key === key) ui.sort.dir = -ui.sort.dir;
@@ -624,6 +702,7 @@
         }, [
           label,
           sub ? h('span', { class: 'muted', style: 'font-weight:400', text: ' · ' + sub }) : null,
+          tip ? h('span', { class: 'sr-only', text: '. ' + tip }) : null,
           h('span', { class: 'caret', 'aria-hidden': 'true', text: active ? (ui.sort.dir === 1 ? ' ▲' : ' ▼') : ' ' })
         ]);
         return th;
@@ -633,19 +712,26 @@
     }
 
     if (ui.scope === 'MY') {
-      paint(store.latest, false);
-    } else {
-      paint(store.latest, true, [0, store.catalog.products.length]);
-      loadStateLatest(ui.scope, function (d, n) {
-        var host = tableCard.querySelector('.card__note:last-of-type');
-        if (host && /Loading/.test(host.textContent)) {
-          host.textContent = 'Loading ' + scopeLabel + ' prices… ' + d + ' / ' + n;
-        }
-      }).then(function (res) {
-        if (routeOf() !== 'overview' || ui.scope === 'MY') return;
-        paint(res, false);
-      });
+      paint(store.latest);
+      return;
     }
+
+    // State scope = ONE file: data/latest_state/<STATE>.json. No fallback scan.
+    moversCard.appendChild(empty('⏳', 'Loading ' + scopeLabel + ' prices…', null));
+    if (tableCard.parentNode) tableCard.parentNode.removeChild(tableCard);
+
+    loadStateLatest(ui.scope).then(function (res) {
+      if (routeOf() !== 'overview' || ui.scope === 'MY') return;
+      if (!tableCard.parentNode) root.appendChild(tableCard);
+      paint(res);
+    }).catch(function (err) {
+      if (routeOf() !== 'overview' || ui.scope === 'MY') return;
+      clear(moversCard);
+      moversCard.appendChild(empty('⚠️', 'Could not load ' + scopeLabel + ' prices',
+        String((err && err.message) || err) +
+        ' — this view needs site/data/latest_state/' + ui.scope + '.json. ' +
+        'Re-run the aggregator, or switch back to All Malaysia.'));
+    });
   }
 
   function titleCase(s) {
@@ -690,6 +776,7 @@
         ui.detail.slug = slug;
         ui.detail.state = (ui.scope !== 'MY' && stateNames.indexOf(ui.scope) >= 0) ? ui.scope : 'MY';
       }
+      var headline = (doc.dates && doc.dates.length) ? doc.dates[doc.dates.length - 1] : null;
 
       function currentBlock() {
         return ui.detail.state === 'MY' ? doc.national : (doc.by_state[ui.detail.state] || {});
@@ -712,7 +799,7 @@
         var block = currentBlock();
         var scopeName = ui.detail.state === 'MY' ? 'All Malaysia' : titleCase(ui.detail.state);
 
-        // ---- summary tiles (latest per level + DoD)
+        // ---- summary tiles: latest reading + both changes, each with its own date
         LEVELS.forEach(function (lv) {
           var arr = block[lv] || [];
           var p = pointsFor(doc.dates, arr);
@@ -728,11 +815,20 @@
             tile.appendChild(h('div', { class: 'tile__delta muted',
               text: 'No ' + lv + ' price for ' + scopeName }));
           } else {
-            tile.appendChild(h('div', { class: 'tile__value', text: fmtRM(p.price) }));
-            var d = h('div', { class: 'tile__delta' });
-            d.appendChild(deltaCell(p.dod, p.price, 'day on day'));
-            d.appendChild(h('span', { class: 'muted', text: '  ' + fmtDate(p.date) }));
-            tile.appendChild(d);
+            tile.appendChild(h('div', { class: 'tile__value' }, [
+              fmtRM(p.price),
+              dateChip(p.date, headline)
+            ]));
+            tile.appendChild(h('div', { class: 'tile__delta' }, [
+              h('span', { class: 'tile__deltakey', text: 'prev' }),
+              deltaCell(p.dod, p.price, { from: p.dod_from, at: p.date, kind: 'prev' })
+            ]));
+            tile.appendChild(h('div', { class: 'tile__delta' }, [
+              h('span', { class: 'tile__deltakey', text: '7-day' }),
+              deltaCell(p.wow, p.price, { from: p.wow_from, at: p.date, kind: 'week' })
+            ]));
+            tile.appendChild(h('div', { class: 'tile__delta muted',
+              text: 'reading of ' + fmtDate(p.date) }));
           }
           tilesHost.appendChild(tile);
         });
@@ -1045,10 +1141,39 @@
     src.appendChild(h('li', { text:
       'A national figure is the mean of every reporting market’s price for that product, level ' +
       'and day (mean over rows, not a mean of state means).' }));
-    src.appendChild(h('li', { text:
-      'Day-on-day compares the latest reading with the previous day that actually had one; ' +
-      'week-on-week compares with the nearest reading on or before seven days earlier.' }));
     card.appendChild(src);
+
+    card.appendChild(h('h3', { text: 'How the change figures are worked out' }));
+    card.appendChild(h('p', { text:
+      'FAMA does not collect every product in every market every day. A product’s newest ' +
+      'reading is therefore often older than the newest date in the archive, and the reading ' +
+      'before it is rarely “yesterday”. One rule is applied everywhere — overview table, top ' +
+      'movers and the product tiles — and every figure names the date it compares against.' }));
+    var rule = h('ul');
+    rule.appendChild(h('li', null, [
+      h('strong', { text: 'Price' }),
+      ' — the most recent reading on or before the headline date. When that reading is older ' +
+      'than the headline date, its own date is shown in muted type beside the price.'
+    ]));
+    rule.appendChild(h('li', null, [
+      h('strong', { text: 'Δ prev' }),
+      ' — the price minus the previous reading that actually exists, whatever its date. The ' +
+      'gap is frequently more than one day, so the cell reads “vs 23 Jul” rather than “day on day”.'
+    ]));
+    rule.appendChild(h('li', null, [
+      h('strong', { text: 'Δ 7-day' }),
+      ' — the price minus the nearest reading dated on or before seven calendar days earlier ' +
+      '(calendar days, not seven rows back). If the archive holds no such reading the cell shows ' +
+      '“—”; it is never quietly compared against the oldest point available and still called a week.'
+    ]));
+    rule.appendChild(h('li', null, [
+      h('strong', { text: 'Market count' }),
+      ' — every price is a mean over the markets that reported it that day, shown as “22 markets”. ' +
+      'When that set changes sharply between the two readings, the difference describes the ' +
+      'basket rather than the market, so the product is kept out of Top movers. It still appears ' +
+      'in the table, with its change and comparison date.'
+    ]));
+    card.appendChild(rule);
 
     card.appendChild(h('h3', { text: 'Data status' }));
     var kv = h('dl', { class: 'kv' });
