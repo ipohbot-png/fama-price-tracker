@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FAMA Price Tracker</title>
+<meta name="description" content="Daily Malaysian farm produce prices from FAMA — farm-gate (Ladang), wholesale (Borong) and retail (Runcit).">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>%F0%9F%A5%AC</text></svg>">
+</head>
+<body>
+
+<a class="sr-only" href="#view">Skip to content</a>
+
+<header class="topbar">
+  <div class="topbar__row">
+    <div class="brand">
+      <span class="brand__mark" aria-hidden="true">🥬</span>
+      <h1>FAMA Price Tracker</h1>
+      <span class="brand__sub" id="brand-date">loading…</span>
+    </div>
+
+    <span class="freshness" id="freshness" data-state="unknown" hidden>
+      <span class="freshness__dot" aria-hidden="true"></span>
+      <span id="freshness-text"></span>
+    </span>
+
+    <div class="seg" id="scope-toggle" role="group" aria-label="Price scope">
+      <button type="button" data-scope="MY" aria-pressed="true">All Malaysia</button>
+      <button type="button" data-scope="PERAK" aria-pressed="false">Perak</button>
+    </div>
+
+    <div class="seg seg--sm" id="theme-toggle" role="group" aria-label="Colour theme">
+      <button type="button" data-theme="auto" aria-pressed="true" title="Match system theme">Auto</button>
+      <button type="button" data-theme="light" aria-pressed="false" title="Light theme">Light</button>
+      <button type="button" data-theme="dark" aria-pressed="false" title="Dark theme">Dark</button>
+    </div>
+  </div>
+
+  <nav class="tabs" id="tabs" aria-label="Views">
+    <a href="#/" data-route="overview">Overview</a>
+    <a href="#/compare" data-route="compare">Compare</a>
+    <a href="#/about" data-route="about">About</a>
+  </nav>
+</header>
+
+<main id="view" tabindex="-1">
+  <div class="empty">
+    <div class="empty__icon" aria-hidden="true">⏳</div>
+    <div class="empty__title">Loading price data…</div>
+  </div>
+</main>
+
+<footer class="foot">
+  <p id="foot-note">Data: FAMA (Lembaga Pemasaran Pertanian Persekutuan) public market-price report.
+  Product names are in Bahasa Malaysia, as published.</p>
+</footer>
+
+<script src="assets/echarts.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

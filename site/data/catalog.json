@@ -1,0 +1,5141 @@
+{
+ "products": [
+  {
+   "id": "anggur-hijau-tanpa-biji",
+   "name": "ANGGUR HIJAU TANPA BIJI",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "anggur-hitam-tanpa-biji",
+   "name": "ANGGUR HITAM TANPA BIJI",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "anggur-merah-tanpa-biji",
+   "name": "ANGGUR MERAH TANPA BIJI",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "asparagus-import",
+   "name": "ASPARAGUS (IMPORT)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "avocado",
+   "name": "AVOCADO",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "SEDANG"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "ayam-hidup",
+   "name": "AYAM HIDUP",
+   "kategori": "Ternakan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": 6.58,
+    "Borong": 7.3,
+    "Runcit": 8.5
+   }
+  },
+  {
+   "id": "ayam-jagung-kuning",
+   "name": "AYAM JAGUNG / KUNING",
+   "kategori": "Ternakan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "ayam-kampung-proses",
+   "name": "AYAM KAMPUNG (PROSES)",
+   "kategori": "Ternakan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "ayam-kampung-hidup",
+   "name": "AYAM KAMPUNG HIDUP",
+   "kategori": "Ternakan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "ayam-proses-standard",
+   "name": "AYAM PROSES STANDARD",
+   "kategori": "Ternakan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": 9.0,
+    "Runcit": 10.64
+   }
+  },
+  {
+   "id": "ayam-proses-super",
+   "name": "AYAM PROSES SUPER",
+   "kategori": "Ternakan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": 11.71
+   }
+  },
+  {
+   "id": "ayam-tua-proses",
+   "name": "AYAM TUA (PROSES)",
+   "kategori": "Ternakan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "ayam-tua-hidup",
+   "name": "AYAM TUA HIDUP",
+   "kategori": "Ternakan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "bawang-besar-kuning-holland",
+   "name": "BAWANG BESAR KUNING / HOLLAND",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": 2.7,
+    "Runcit": 4.27
+   }
+  },
+  {
+   "id": "bawang-besar-merah-china",
+   "name": "BAWANG BESAR MERAH (CHINA)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": 3.25,
+    "Runcit": 5.4
+   }
+  },
+  {
+   "id": "bawang-besar-merah-import",
+   "name": "BAWANG BESAR MERAH (IMPORT)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": 2.5,
+    "Runcit": 4.75
+   }
+  },
+  {
+   "id": "bawang-besar-merah-india",
+   "name": "BAWANG BESAR MERAH (INDIA)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": 2.45,
+    "Runcit": 3.99
+   }
+  },
+  {
+   "id": "bawang-besar-merah-pakistan",
+   "name": "BAWANG BESAR MERAH (PAKISTAN)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": 2.45,
+    "Runcit": 5.1
+   }
+  },
+  {
+   "id": "bawang-merah-kecil-import",
+   "name": "BAWANG MERAH / KECIL (IMPORT)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": 3.43,
+    "Runcit": 7.57
+   }
+  },
+  {
+   "id": "bawang-merah-kecil-india",
+   "name": "BAWANG MERAH / KECIL (INDIA)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": 3.09,
+    "Runcit": 5.58
+   }
+  },
+  {
+   "id": "bawang-merah-kecil-pakistan",
+   "name": "BAWANG MERAH / KECIL (PAKISTAN)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": 8.0,
+    "Runcit": 10.0
+   }
+  },
+  {
+   "id": "bawang-merah-kecil-thai",
+   "name": "BAWANG MERAH / KECIL (THAI)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": 8.99,
+    "Runcit": 12.66
+   }
+  },
+  {
+   "id": "bawang-merah-rose",
+   "name": "BAWANG MERAH ROSE",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": 4.88,
+    "Runcit": 7.55
+   }
+  },
+  {
+   "id": "bawang-putih-china",
+   "name": "BAWANG PUTIH (CHINA)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": 7.11,
+    "Runcit": 9.65
+   }
+  },
+  {
+   "id": "bayam",
+   "name": "BAYAM",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": 2.44,
+    "Borong": 3.74,
+    "Runcit": 5.49
+   }
+  },
+  {
+   "id": "belimbing-b10",
+   "name": "BELIMBING (B10)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "belimbing-buluh",
+   "name": "BELIMBING BULUH",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "betik-sekaki",
+   "name": "BETIK SEKAKI",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": 2.09,
+    "Borong": 3.83,
+    "Runcit": 5.88
+   }
+  },
+  {
+   "id": "brokoli",
+   "name": "BROKOLI",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "brokoli-import",
+   "name": "BROKOLI (IMPORT)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "buah-naga-pitaya-isi-merah",
+   "name": "BUAH NAGA/PITAYA ISI MERAH",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "bunga-kantan",
+   "name": "BUNGA KANTAN",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Tangkai",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "bunga-kantan-import",
+   "name": "BUNGA KANTAN (IMPORT)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Tangkai",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "burung-puyuh-proses",
+   "name": "BURUNG PUYUH (PROSES)",
+   "kategori": "Ternakan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "cempedak-kampung",
+   "name": "CEMPEDAK KAMPUNG",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": 7.25
+   }
+  },
+  {
+   "id": "cempedak-king",
+   "name": "CEMPEDAK KING",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "cempedak-klon",
+   "name": "CEMPEDAK KLON",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "cendawan-tiram-kelabu",
+   "name": "CENDAWAN TIRAM KELABU",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "ciku",
+   "name": "CIKU",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "cili-lada-solok",
+   "name": "CILI / LADA SOLOK",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": 13.0,
+    "Borong": 14.6,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "cili-hijau",
+   "name": "CILI HIJAU",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": 6.35,
+    "Borong": 9.06,
+    "Runcit": 11.96
+   }
+  },
+  {
+   "id": "cili-hijau-import",
+   "name": "CILI HIJAU (IMPORT)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": 8.5,
+    "Runcit": 11.5
+   }
+  },
+  {
+   "id": "cili-merah-china",
+   "name": "CILI MERAH (CHINA)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": 6.0,
+    "Runcit": 9.67
+   }
+  },
+  {
+   "id": "cili-merah-import",
+   "name": "CILI MERAH (IMPORT)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "cili-merah-thailand",
+   "name": "CILI MERAH (THAILAND)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": 8.66,
+    "Runcit": 12.73
+   }
+  },
+  {
+   "id": "cili-merah-vietnam",
+   "name": "CILI MERAH (VIETNAM)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": 8.65,
+    "Runcit": 11.85
+   }
+  },
+  {
+   "id": "cili-merah-kulai-kulai-hibrid",
+   "name": "CILI MERAH KULAI / KULAI HIBRID",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": 9.28,
+    "Borong": 12.67,
+    "Runcit": 16.86
+   }
+  },
+  {
+   "id": "cili-merah-minyak",
+   "name": "CILI MERAH MINYAK",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": 8.03,
+    "Borong": 9.96,
+    "Runcit": 13.42
+   }
+  },
+  {
+   "id": "cili-padi",
+   "name": "CILI PADI",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "cili-padi-akar-thailand",
+   "name": "CILI PADI AKAR (THAILAND)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "cili-padi-kampung-thailand",
+   "name": "CILI PADI KAMPUNG (THAILAND)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "cili-padi-merah-import",
+   "name": "CILI PADI MERAH (IMPORT)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "dabai",
+   "name": "DABAI",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "daging-arnab",
+   "name": "DAGING ARNAB",
+   "kategori": "Ternakan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "daging-batang-pinang-tenderlion",
+   "name": "DAGING BATANG PINANG - TENDERLION",
+   "kategori": "Ternakan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "daging-biri-biri-import",
+   "name": "DAGING BIRI-BIRI (IMPORT)",
+   "kategori": "Ternakan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "daging-kambing",
+   "name": "DAGING KAMBING",
+   "kategori": "Ternakan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "daging-lembu-cincang",
+   "name": "DAGING LEMBU CINCANG",
+   "kategori": "Ternakan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "daging-lembu-pejal",
+   "name": "DAGING LEMBU PEJAL",
+   "kategori": "Ternakan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": 34.16,
+    "Runcit": 39.69
+   }
+  },
+  {
+   "id": "daging-pejal-india",
+   "name": "DAGING PEJAL (INDIA)",
+   "kategori": "Ternakan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "daging-rusa",
+   "name": "DAGING RUSA",
+   "kategori": "Ternakan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "daun-bawang",
+   "name": "DAUN BAWANG",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": 20.0,
+    "Borong": 7.16,
+    "Runcit": 9.49
+   }
+  },
+  {
+   "id": "daun-bawang-import",
+   "name": "DAUN BAWANG (IMPORT)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": 6.78,
+    "Runcit": 11.0
+   }
+  },
+  {
+   "id": "daun-kesum",
+   "name": "DAUN KESUM",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "daun-ketumbar-import",
+   "name": "DAUN KETUMBAR (IMPORT)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "daun-selom",
+   "name": "DAUN SELOM",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "daun-sup-import",
+   "name": "DAUN SUP (IMPORT)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": 9.0,
+    "Runcit": 14.0
+   }
+  },
+  {
+   "id": "daun-sup-tanah-tinggi",
+   "name": "DAUN SUP (TANAH TINGGI)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": 13.32,
+    "Runcit": 16.03
+   }
+  },
+  {
+   "id": "dokong",
+   "name": "DOKONG",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "dokong-thailand",
+   "name": "DOKONG (THAILAND)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "duku",
+   "name": "DUKU",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "duku-dewan",
+   "name": "DUKU DEWAN",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "duku-muar",
+   "name": "DUKU MUAR",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "durian-belanda",
+   "name": "DURIAN BELANDA",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "durian-d24-d24",
+   "name": "DURIAN D24 (D24)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "durian-duri-hitam-ochii-d200",
+   "name": "DURIAN DURI HITAM / OCHII (D200)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "durian-ioi-d168",
+   "name": "DURIAN IOI (D168)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "durian-kampung",
+   "name": "DURIAN KAMPUNG",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "durian-klon-kahwin",
+   "name": "DURIAN KLON / KAHWIN",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "durian-musang-king-raja-kunyit-d197",
+   "name": "DURIAN MUSANG KING / RAJA KUNYIT (D197)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "durian-musang-queen-tekka-d160",
+   "name": "DURIAN MUSANG QUEEN / TEKKA (D160)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "durian-tangkai-panjang-kan-yau-d158",
+   "name": "DURIAN TANGKAI PANJANG / KAN YAU (D158)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "durian-udang-merah-d175",
+   "name": "DURIAN UDANG MERAH (D175)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "durian-udang-merah-thailand",
+   "name": "DURIAN UDANG MERAH (THAILAND)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "durian-xo",
+   "name": "DURIAN XO",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "epal-hijau",
+   "name": "EPAL HIJAU",
+   "kategori": "Buah-Buahan",
+   "unit": "Biji",
+   "grades": [
+    "SEDANG"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "epal-merah-fuji",
+   "name": "EPAL MERAH (FUJI)",
+   "kategori": "Buah-Buahan",
+   "unit": "Biji",
+   "grades": [
+    "SEDANG"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "halia-muda",
+   "name": "HALIA MUDA",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "halia-muda-import",
+   "name": "HALIA MUDA (IMPORT)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "halia-tua",
+   "name": "HALIA TUA",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "halia-tua-import",
+   "name": "HALIA TUA (IMPORT)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "halia-tua-bentong",
+   "name": "HALIA TUA BENTONG",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "hati-lembu-tempatan",
+   "name": "HATI (LEMBU TEMPATAN)",
+   "kategori": "Ternakan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "ikan-baung",
+   "name": "IKAN BAUNG",
+   "kategori": "Hasil Laut & Perikanan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "ikan-cencaru",
+   "name": "IKAN CENCARU",
+   "kategori": "Hasil Laut & Perikanan",
+   "unit": "Kilogram",
+   "grades": [
+    "SEDANG"
+   ],
+   "levels": [
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "ikan-haruan",
+   "name": "IKAN HARUAN",
+   "kategori": "Hasil Laut & Perikanan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "ikan-jelawat",
+   "name": "IKAN JELAWAT",
+   "kategori": "Hasil Laut & Perikanan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "ikan-keli-bunga",
+   "name": "IKAN KELI BUNGA",
+   "kategori": "Hasil Laut & Perikanan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "ikan-kembung",
+   "name": "IKAN KEMBUNG",
+   "kategori": "Hasil Laut & Perikanan",
+   "unit": "Kilogram",
+   "grades": [
+    "SEDANG"
+   ],
+   "levels": [
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "ikan-kembung-pelaling",
+   "name": "IKAN KEMBUNG/PELALING",
+   "kategori": "Hasil Laut & Perikanan",
+   "unit": "Kilogram",
+   "grades": [
+    "SEDANG"
+   ],
+   "levels": [
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "ikan-patin-kolam",
+   "name": "IKAN PATIN (KOLAM)",
+   "kategori": "Hasil Laut & Perikanan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "ikan-patin-sangkar",
+   "name": "IKAN PATIN (SANGKAR)",
+   "kategori": "Hasil Laut & Perikanan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "ikan-sardin",
+   "name": "IKAN SARDIN",
+   "kategori": "Hasil Laut & Perikanan",
+   "unit": "Kilogram",
+   "grades": [
+    "SEDANG"
+   ],
+   "levels": [
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "ikan-selar",
+   "name": "IKAN SELAR",
+   "kategori": "Hasil Laut & Perikanan",
+   "unit": "Kilogram",
+   "grades": [
+    "SEDANG"
+   ],
+   "levels": [
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "ikan-tilapia-hitam",
+   "name": "IKAN TILAPIA HITAM",
+   "kategori": "Hasil Laut & Perikanan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "ikan-tilapia-merah",
+   "name": "IKAN TILAPIA MERAH",
+   "kategori": "Hasil Laut & Perikanan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "itik-proses",
+   "name": "ITIK (PROSES)",
+   "kategori": "Ternakan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "jagung-manis",
+   "name": "JAGUNG MANIS",
+   "kategori": "Tanaman Kontan",
+   "unit": "Tongkol",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "jagung-sayur-baby-corn",
+   "name": "JAGUNG SAYUR / BABY CORN",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "jambu-air-madu-loceng",
+   "name": "JAMBU AIR  MADU / LOCENG",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "jambu-batu",
+   "name": "JAMBU BATU",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "jambu-batu-tanpa-biji",
+   "name": "JAMBU BATU TANPA BIJI",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "jering",
+   "name": "JERING",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "kacang-bendi",
+   "name": "KACANG BENDI",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": 3.53,
+    "Borong": 5.28,
+    "Runcit": 7.82
+   }
+  },
+  {
+   "id": "kacang-bendi-import",
+   "name": "KACANG BENDI (IMPORT)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "kacang-botor",
+   "name": "KACANG BOTOR",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "kacang-buncis",
+   "name": "KACANG BUNCIS",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": 6.4,
+    "Borong": 8.79,
+    "Runcit": 11.96
+   }
+  },
+  {
+   "id": "kacang-buncis-import",
+   "name": "KACANG BUNCIS (IMPORT)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": 9.0,
+    "Runcit": 12.2
+   }
+  },
+  {
+   "id": "kacang-panjang-hijau",
+   "name": "KACANG PANJANG HIJAU",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": 3.8,
+    "Borong": 5.37,
+    "Runcit": 8.07
+   }
+  },
+  {
+   "id": "kacang-panjang-hijau-import",
+   "name": "KACANG PANJANG HIJAU (IMPORT)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": 6.0,
+    "Runcit": 9.0
+   }
+  },
+  {
+   "id": "kailan",
+   "name": "KAILAN",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "kailan-import",
+   "name": "KAILAN (IMPORT)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "kangkung",
+   "name": "KANGKUNG",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": 2.1,
+    "Borong": 3.22,
+    "Runcit": 5.16
+   }
+  },
+  {
+   "id": "kangkung-import",
+   "name": "KANGKUNG (IMPORT)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": 4.2,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "keladi",
+   "name": "KELADI",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "kelapa-dikupas-besar",
+   "name": "KELAPA DIKUPAS BESAR",
+   "kategori": "Tanaman Kontan",
+   "unit": "Biji",
+   "grades": [
+    "BESAR"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "kelapa-dikupas-f-a-q",
+   "name": "KELAPA DIKUPAS F.A.Q",
+   "kategori": "Tanaman Kontan",
+   "unit": "Biji",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "kelapa-dikupas-import-indonesia",
+   "name": "KELAPA DIKUPAS IMPORT (INDONESIA)",
+   "kategori": "Tanaman Kontan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "kelapa-dikupas-kecil",
+   "name": "KELAPA DIKUPAS KECIL",
+   "kategori": "Tanaman Kontan",
+   "unit": "Biji",
+   "grades": [
+    "KECIL"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "kelapa-dikupas-sedang",
+   "name": "KELAPA DIKUPAS SEDANG",
+   "kategori": "Tanaman Kontan",
+   "unit": "Biji",
+   "grades": [
+    "SEDANG"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": 1.49,
+    "Borong": 2.08,
+    "Runcit": 2.89
+   }
+  },
+  {
+   "id": "kelapa-muda",
+   "name": "KELAPA MUDA",
+   "kategori": "Tanaman Kontan",
+   "unit": "Biji",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "kelapa-parut",
+   "name": "KELAPA PARUT",
+   "kategori": "Tanaman Kontan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": 11.0
+   }
+  },
+  {
+   "id": "keledek-oren-vitato",
+   "name": "KELEDEK OREN / VITATO",
+   "kategori": "Tanaman Kontan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "keledek-putih",
+   "name": "KELEDEK PUTIH",
+   "kategori": "Tanaman Kontan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "keledek-ungu",
+   "name": "KELEDEK UNGU",
+   "kategori": "Tanaman Kontan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "keratan-ayam-dada",
+   "name": "KERATAN AYAM - DADA",
+   "kategori": "Ternakan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "keratan-ayam-kepak",
+   "name": "KERATAN AYAM - KEPAK",
+   "kategori": "Ternakan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "keratan-ayam-paha",
+   "name": "KERATAN AYAM - PAHA",
+   "kategori": "Ternakan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "keratan-ayam-paha-atas-thigh",
+   "name": "KERATAN AYAM - PAHA ATAS / THIGH",
+   "kategori": "Ternakan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "keratan-ayam-paha-penuh-whole-leg",
+   "name": "KERATAN AYAM - PAHA PENUH / WHOLE LEG",
+   "kategori": "Ternakan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "ketola-petola-segi",
+   "name": "KETOLA / PETOLA SEGI",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "ketola-petola-segi-import",
+   "name": "KETOLA / PETOLA SEGI (IMPORT)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "kopi-biji-arabica",
+   "name": "KOPI BIJI ARABICA",
+   "kategori": "Tanaman Kontan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "kopi-biji-liberica",
+   "name": "KOPI BIJI LIBERICA",
+   "kategori": "Tanaman Kontan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "kopi-biji-robusta",
+   "name": "KOPI BIJI ROBUSTA",
+   "kategori": "Tanaman Kontan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "kopi-buah-arabica",
+   "name": "KOPI BUAH ARABICA",
+   "kategori": "Tanaman Kontan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "kopi-buah-liberica",
+   "name": "KOPI BUAH LIBERICA",
+   "kategori": "Tanaman Kontan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "kopi-buah-robusta",
+   "name": "KOPI BUAH ROBUSTA",
+   "kategori": "Tanaman Kontan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "kubis-bulat-china",
+   "name": "KUBIS BULAT (CHINA)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": 2.32,
+    "Runcit": 3.76
+   }
+  },
+  {
+   "id": "kubis-bulat-indonesia",
+   "name": "KUBIS BULAT (INDONESIA)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": 2.26,
+    "Runcit": 3.88
+   }
+  },
+  {
+   "id": "kubis-bulat-tanah-tinggi",
+   "name": "KUBIS BULAT (TANAH TINGGI)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": 3.0,
+    "Runcit": 4.96
+   }
+  },
+  {
+   "id": "kubis-bulat-beijing-import",
+   "name": "KUBIS BULAT BEIJING (IMPORT)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "kubis-bunga-import",
+   "name": "KUBIS BUNGA (IMPORT)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "kubis-panjang-cina",
+   "name": "KUBIS PANJANG / CINA",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "kubis-panjang-cina-import",
+   "name": "KUBIS PANJANG / CINA (IMPORT)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "kubis-panjang-mini-picai-cina",
+   "name": "KUBIS PANJANG MINI / PICAI CINA",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "kubis-panjang-silinder-picai",
+   "name": "KUBIS PANJANG SILINDER / PICAI",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "kundur-bulat",
+   "name": "KUNDUR BULAT",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "kunyit",
+   "name": "KUNYIT",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "labu-air",
+   "name": "LABU AIR",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "labu-manis",
+   "name": "LABU MANIS",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "lada-benggala-capsicum-hijau",
+   "name": "LADA BENGGALA / CAPSICUM HIJAU",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "lada-benggala-capsicum-hijau-import",
+   "name": "LADA BENGGALA / CAPSICUM HIJAU (IMPORT)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "lada-benggala-capsicum-kuning",
+   "name": "LADA BENGGALA / CAPSICUM KUNING",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "lada-benggala-capsicum-kuning-import",
+   "name": "LADA BENGGALA / CAPSICUM KUNING (IMPORT)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "lada-benggala-capsicum-merah",
+   "name": "LADA BENGGALA / CAPSICUM MERAH",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "lada-benggala-capsicum-merah-import",
+   "name": "LADA BENGGALA / CAPSICUM MERAH (IMPORT)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "lada-putih-sabah",
+   "name": "LADA PUTIH SABAH",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "lai-kuning",
+   "name": "LAI KUNING",
+   "kategori": "Buah-Buahan",
+   "unit": "Biji",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "langsat",
+   "name": "LANGSAT",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "lengkuas",
+   "name": "LENGKUAS",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "lik",
+   "name": "LIK",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "lik-import",
+   "name": "LIK (IMPORT)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "limau-bali-pamelo",
+   "name": "LIMAU BALI / PAMELO",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "limau-kasturi",
+   "name": "LIMAU KASTURI",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "limau-mandarin",
+   "name": "LIMAU MANDARIN",
+   "kategori": "Buah-Buahan",
+   "unit": "Biji",
+   "grades": [
+    "SEDANG"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "limau-manis",
+   "name": "LIMAU MANIS",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "limau-manis-thailand",
+   "name": "LIMAU MANIS (THAILAND)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "limau-nipis",
+   "name": "LIMAU NIPIS",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "limau-oren-valencia",
+   "name": "LIMAU OREN VALENCIA",
+   "kategori": "Buah-Buahan",
+   "unit": "Biji",
+   "grades": [
+    "SEDANG"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "limpa-lembu-tempatan",
+   "name": "LIMPA (LEMBU TEMPATAN)",
+   "kategori": "Ternakan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "lobak-merah-china",
+   "name": "LOBAK MERAH (CHINA)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "lobak-putih-tanah-tinggi",
+   "name": "LOBAK PUTIH TANAH TINGGI",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "mangga-chokanan-ma224",
+   "name": "MANGGA CHOKANAN (MA224)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "mangga-chokanan-thailand",
+   "name": "MANGGA CHOKANAN (THAILAND)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "mangga-harumanis-indonesia",
+   "name": "MANGGA HARUMANIS (INDONESIA)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "mangga-harumanis-thailand",
+   "name": "MANGGA HARUMANIS (THAILAND)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "mangga-lemak-manis-thailand",
+   "name": "MANGGA LEMAK MANIS (THAILAND)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "mangga-mas-hitam-thong-dam-thailand",
+   "name": "MANGGA MAS HITAM/THONG DAM (THAILAND)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "mangga-susu-thailand",
+   "name": "MANGGA SUSU (THAILAND)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "mangga-waterlily-thailand",
+   "name": "MANGGA WATERLILY (THAILAND)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "mangga-waterlily-gold-golden-lily-thailand",
+   "name": "MANGGA WATERLILY GOLD/GOLDEN LILY (THAILAND)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "manggis",
+   "name": "MANGGIS",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "manggis-import",
+   "name": "MANGGIS(IMPORT)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "mata-kucing-longan",
+   "name": "MATA KUCING / LONGAN",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "nanas-josapine-ac5",
+   "name": "NANAS JOSAPINE (AC5)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": 2.75,
+    "Borong": 3.31,
+    "Runcit": 4.69
+   }
+  },
+  {
+   "id": "nanas-md2-ac9",
+   "name": "NANAS MD2 (AC9)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "nanas-moris-ac1",
+   "name": "NANAS MORIS (AC1)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "SEDANG"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "nanas-sarawak-ac2",
+   "name": "NANAS SARAWAK (AC2)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "nangka-klon-kahwin",
+   "name": "NANGKA KLON / KAHWIN",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "nangka-klon-kahwin-ulas-pulp",
+   "name": "NANGKA KLON / KAHWIN (ULAS / PULP)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "nangka-tekam-yellow-j33",
+   "name": "NANGKA TEKAM YELLOW (J33)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "nangka-tekam-yellow-j33-ulas-pulp",
+   "name": "NANGKA TEKAM YELLOW (J33) (ULAS / PULP)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "paru-lembu-tempatan",
+   "name": "PARU (LEMBU TEMPATAN)",
+   "kategori": "Ternakan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "pegaga",
+   "name": "PEGAGA",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "peria",
+   "name": "PERIA",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "peria-katak",
+   "name": "PERIA KATAK",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "perut-lembu-tempatan",
+   "name": "PERUT (LEMBU TEMPATAN)",
+   "kategori": "Ternakan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "petai",
+   "name": "PETAI",
+   "kategori": "Sayur-Sayuran",
+   "unit": "RM/5 Keping",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "pisang-awak-mp1",
+   "name": "PISANG AWAK (MP1)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "pisang-berangan",
+   "name": "PISANG BERANGAN",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": 2.87,
+    "Borong": 4.36,
+    "Runcit": 6.27
+   }
+  },
+  {
+   "id": "pisang-cavendish-mp14",
+   "name": "PISANG CAVENDISH (MP14)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "pisang-embun-mp7",
+   "name": "PISANG EMBUN (MP7)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "pisang-mas",
+   "name": "PISANG MAS",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": 2.85,
+    "Borong": 4.1,
+    "Runcit": 6.03
+   }
+  },
+  {
+   "id": "pisang-nangka-mp2",
+   "name": "PISANG NANGKA (MP2)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": 6.25
+   }
+  },
+  {
+   "id": "pisang-nipah-import",
+   "name": "PISANG NIPAH (IMPORT)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "pisang-nipah-mp5-abu-mp6-sabah-kapok",
+   "name": "PISANG NIPAH (MP5) / ABU (MP6) / SABAH / KAPOK",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": 7.25
+   }
+  },
+  {
+   "id": "pisang-rastali-mp9",
+   "name": "PISANG RASTALI (MP9)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": 7.5
+   }
+  },
+  {
+   "id": "pisang-tanduk",
+   "name": "PISANG TANDUK",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": 7.5
+   }
+  },
+  {
+   "id": "poh-choy",
+   "name": "POH CHOY",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "pucuk-gajus",
+   "name": "PUCUK GAJUS",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "pucuk-paku",
+   "name": "PUCUK PAKU",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "pulasan",
+   "name": "PULASAN",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "rambutan-anak-sekolah-r191",
+   "name": "RAMBUTAN ANAK SEKOLAH (R191)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "rambutan-gading",
+   "name": "RAMBUTAN GADING",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "rambutan-merah",
+   "name": "RAMBUTAN MERAH",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "rambutan-merah-import",
+   "name": "RAMBUTAN MERAH (IMPORT)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "rebung",
+   "name": "REBUNG",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "rock-melon",
+   "name": "ROCK MELON",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "salad",
+   "name": "SALAD",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "salad-import",
+   "name": "SALAD (IMPORT)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "salad-bulat-tanah-tinggi",
+   "name": "SALAD BULAT TANAH TINGGI",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "santan-biasa",
+   "name": "SANTAN BIASA",
+   "kategori": "Lain-Lain Makanan Proses",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": 4.0
+   }
+  },
+  {
+   "id": "santan-pekat",
+   "name": "SANTAN PEKAT",
+   "kategori": "Lain-Lain Makanan Proses",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": 14.98
+   }
+  },
+  {
+   "id": "sawi-bunga",
+   "name": "SAWI BUNGA",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "sawi-hijau-import",
+   "name": "SAWI HIJAU (IMPORT)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": 3.72,
+    "Runcit": 5.83
+   }
+  },
+  {
+   "id": "sawi-hijau-tanah-rendah",
+   "name": "SAWI HIJAU (TANAH RENDAH)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": 3.05,
+    "Borong": 4.41,
+    "Runcit": 6.03
+   }
+  },
+  {
+   "id": "sawi-hijau-tanah-tinggi",
+   "name": "SAWI HIJAU TANAH TINGGI",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": 3.7,
+    "Runcit": 5.5
+   }
+  },
+  {
+   "id": "sawi-jepun",
+   "name": "SAWI JEPUN",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "sawi-pahit",
+   "name": "SAWI PAHIT",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "sawi-putih-pak-choy",
+   "name": "SAWI PUTIH PAK CHOY",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "selada-air-water-cress",
+   "name": "SELADA AIR/WATER CRESS",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "selasih",
+   "name": "SELASIH",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "sengkuang",
+   "name": "SENGKUANG",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "serai",
+   "name": "SERAI",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "tauge",
+   "name": "TAUGE",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "telur-ayam-a",
+   "name": "TELUR AYAM A",
+   "kategori": "Ternakan",
+   "unit": "Biji",
+   "grades": [
+    "A"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": 0.44,
+    "Borong": 0.45,
+    "Runcit": 0.47
+   }
+  },
+  {
+   "id": "telur-ayam-b",
+   "name": "TELUR AYAM B",
+   "kategori": "Ternakan",
+   "unit": "Biji",
+   "grades": [
+    "B"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": 0.41,
+    "Borong": 0.42,
+    "Runcit": 0.44
+   }
+  },
+  {
+   "id": "telur-ayam-c",
+   "name": "TELUR AYAM C",
+   "kategori": "Ternakan",
+   "unit": "Biji",
+   "grades": [
+    "C"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": 0.38,
+    "Borong": 0.38,
+    "Runcit": 0.4
+   }
+  },
+  {
+   "id": "telur-itik",
+   "name": "TELUR ITIK",
+   "kategori": "Ternakan",
+   "unit": "Biji",
+   "grades": [
+    "SEDANG"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "telur-itik-masin",
+   "name": "TELUR ITIK MASIN",
+   "kategori": "Lain-Lain Makanan Proses",
+   "unit": "Biji",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "telur-puyuh",
+   "name": "TELUR PUYUH",
+   "kategori": "Ternakan",
+   "unit": "Biji",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "tembikai-kuning",
+   "name": "TEMBIKAI KUNING",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "tembikai-merah",
+   "name": "TEMBIKAI MERAH",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "tembikai-merah-tanpa-biji",
+   "name": "TEMBIKAI MERAH TANPA BIJI",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": 1.9,
+    "Borong": 2.64,
+    "Runcit": 3.84
+   }
+  },
+  {
+   "id": "tembikai-wangi-honey-dew",
+   "name": "TEMBIKAI WANGI / HONEY DEW",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "tenggek-burung",
+   "name": "TENGGEK BURUNG",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "terung-asam",
+   "name": "TERUNG ASAM",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "terung-bulat",
+   "name": "TERUNG BULAT",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "terung-panjang-peparu-import",
+   "name": "TERUNG PANJANG / PEPARU (IMPORT)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": 5.0,
+    "Runcit": 7.0
+   }
+  },
+  {
+   "id": "terung-panjang-peparu-tanah-rendah",
+   "name": "TERUNG PANJANG / PEPARU (TANAH RENDAH)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": 4.05,
+    "Borong": 5.99,
+    "Runcit": 8.45
+   }
+  },
+  {
+   "id": "terung-peparu-mini",
+   "name": "TERUNG PEPARU MINI",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "terung-peparu-panjang-tanah-tinggi",
+   "name": "TERUNG PEPARU PANJANG TANAH TINGGI",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "terung-pipit",
+   "name": "TERUNG PIPIT",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "terung-telunjuk",
+   "name": "TERUNG TELUNJUK",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "timun-hijau",
+   "name": "TIMUN HIJAU",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": 2.06,
+    "Borong": 3.04,
+    "Runcit": 4.48
+   }
+  },
+  {
+   "id": "timun-hijau-import",
+   "name": "TIMUN HIJAU (IMPORT)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": 2.66,
+    "Runcit": 4.0
+   }
+  },
+  {
+   "id": "timun-jepun",
+   "name": "TIMUN JEPUN",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "tomato-tanah-tinggi",
+   "name": "TOMATO (TANAH TINGGI)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": 7.41,
+    "Runcit": 9.98
+   }
+  },
+  {
+   "id": "tomato-import",
+   "name": "TOMATO IMPORT",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": 5.2,
+    "Runcit": 7.5
+   }
+  },
+  {
+   "id": "tomato-plum-tanah-tinggi",
+   "name": "TOMATO PLUM (TANAH TINGGI)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "tomato-tanah-rendah",
+   "name": "TOMATO TANAH RENDAH",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "tong-ho",
+   "name": "TONG HO",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "ubi-kayu",
+   "name": "UBI KAYU",
+   "kategori": "Tanaman Kontan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "ubi-kentang-import",
+   "name": "UBI KENTANG (IMPORT)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": 2.16,
+    "Runcit": 3.88
+   }
+  },
+  {
+   "id": "ubi-kentang-holland",
+   "name": "UBI KENTANG HOLLAND",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": 2.32,
+    "Runcit": 3.68
+   }
+  },
+  {
+   "id": "udang-galah",
+   "name": "UDANG GALAH",
+   "kategori": "Hasil Laut & Perikanan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  },
+  {
+   "id": "ulam-raja",
+   "name": "ULAM RAJA",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ],
+   "levels": [
+    "Ladang",
+    "Borong",
+    "Runcit"
+   ],
+   "latest": {
+    "Ladang": null,
+    "Borong": null,
+    "Runcit": null
+   }
+  }
+ ],
+ "states": [
+  "JOHOR",
+  "KEDAH",
+  "KELANTAN",
+  "MELAKA",
+  "NEGERI SEMBILAN",
+  "PAHANG",
+  "PERAK",
+  "PERLIS",
+  "PULAU PINANG",
+  "SABAH",
+  "SARAWAK",
+  "SELANGOR",
+  "TERENGGANU",
+  "W.P. KUALA LUMPUR",
+  "W.P. LABUAN",
+  "W.P. PUTRAJAYA"
+ ],
+ "dates": {
+  "min": "2026-06-27",
+  "max": "2026-07-25"
+ }
+}
