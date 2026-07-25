@@ -93,12 +93,28 @@ priceid,tarikh_harga,systemdate,negeri,daerah,lokasi,peringkat,sublevel,kategori
 - `catalog.json` — `{ "products": [{"id": "<slug>", "name": "...", "kategori": "...", "unit": "...", "grades": [...], "levels": [...], "latest": {"Ladang": x|null, "Borong": x|null, "Runcit": x|null}}], "states": [...], "dates": {"min": "...", "max": "..."} }`
 - `series/<product-slug>.json` — `{ "name": ..., "unit": ..., "dates": ["YYYY-MM-DD",...], "national": {"Ladang": [x|null,...], "Borong": [...], "Runcit": [...]}, "by_state": {"PERAK": {"Ladang": [...], ...}, ...} }`
   Values = mean of `harga` across rows for that (date, level, [state], product), 2 dp.
-- `latest.json` — latest date's per-product national averages per level + change vs previous
-  available day and vs 7 days earlier: `{"date": ..., "rows": [{"id","name","unit","level","price","dod","wow"}]}`
+- `latest.json` — **v2 (post-review)**: last-known national averages per product×level.
+  `{"date": <max archive date>, "rows": [{"id","name","unit","level","price","date","n","dod","dod_from","wow","wow_from","reliable"}]}`
+  - `price` = last non-null national mean on or before max date, looking back ≤14 days; `date` = that reading's date; `n` = row count behind the mean.
+  - `dod` = `price` minus the previous available non-null point strictly before `date`; `dod_from` = that point's date; null if none.
+  - `wow` = `price` minus nearest non-null point on or before `date - 7 days`; `wow_from` = its date; null if none.
+  - `reliable` = false when the dod comparison is distorted by basket change: prev point's `n` differs by >50% or the contributing state set differs; UI must exclude `reliable:false` rows from Top Movers (still shown in the table).
+- `latest_state/<STATE>.json` — same shape as `latest.json`, computed over that state's rows only
+  (one file per state in catalog `states`). UI state scopes MUST use these, not client-side series scans.
 - `meta.json` — `{ "generated_at_utc", "window": {...}, "row_count", "update_times": {"by_hour": {"00".."23": count}, "median_entry_local": "HH:MM", "note"}, "source": "..." }`
 - Slug: lowercase varieti + grade when needed for uniqueness, non-alnum → `-`.
 - Product identity = (`varieti`, `gred`) when a varieti has >1 grade (e.g. TELUR AYAM A/B/C),
   else `varieti` alone.
+- **Slug stability (v2)**: aggregator persists `site/data/slugs.json` mapping identity-key →
+  slug. Existing assignments are never changed or reused, even if the identity rule would now
+  produce a different slug (e.g. a varieti gaining a second grade keeps its original slug for
+  the original grade... the NEW grade gets a new suffixed slug). Series files no longer in the
+  catalog are deleted from `site/data/series/`.
+- `catalog.json` products carry only fields the UI reads: `id,name,kategori,unit,grades`
+  (drop `levels`/`latest` — dead payload).
+- Comparison-date semantics are UNIFIED across aggregator and UI: any DoD/WoW figure is
+  disclosed with its actual comparison date (`dod_from`/`wow_from`); the UI must label
+  "vs <date>" rather than claiming "day on day" when the gap ≠ 1 day.
 
 ## 5. Dashboard (Phase 4)
 

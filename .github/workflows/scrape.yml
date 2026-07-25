@@ -1,0 +1,74 @@
+name: Scrape FAMA prices & deploy dashboard
+
+on:
+  schedule:
+    # 12:30 MYT and 23:00 MYT (MYT = UTC+8). FAMA's median entry time is ~10:34 MYT.
+    - cron: "30 4 * * *"
+    - cron: "0 15 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: scrape
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Scrape rolling window
+        run: python -m scraper.scrape
+
+      - name: Rebuild dashboard data
+        run: python -m scraper.aggregate
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data site/data
+          # Skip the commit when the only change is meta.json's generated_at timestamp.
+          if git diff --cached --quiet -- ':!site/data/meta.json'; then
+            echo "No data changes beyond meta timestamp - skipping commit."
+            # Keep the fresh meta.json in the working tree so the Pages artifact
+            # still carries an updated generated_at freshness stamp.
+            git reset -q
+          else
+            git commit -m "data: scrape $(date -u +'%Y-%m-%d %H:%M') UTC"
+            for i in 1 2 3; do
+              git pull --rebase origin master && git push origin master && break
+              echo "Push attempt $i failed; retrying..."
+              sleep $((i * 10))
+            done
+          fi
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: scrape
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
