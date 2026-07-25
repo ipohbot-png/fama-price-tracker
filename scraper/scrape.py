@@ -19,6 +19,27 @@ Strategy
 3. Merge into ``data/daily/<date>.csv`` keyed on ``priceid`` — existing rows are
    overwritten with the freshly fetched values, new rows appended, output sorted
    by ``priceid``. Re-running with unchanged upstream data is a no-op.
+   **Empty incoming fields never blank a non-empty archived field** (see
+   :func:`merge_records`): the archive only ever gains information.
+
+Verification & exit codes
+-------------------------
+The archive is a superset of the upstream rolling window: upstream rows can be
+deleted (or the window can roll past them) while our committed CSV keeps them
+forever. So the archive row count is **not** a verification signal — comparing
+it against the upstream control count made every upstream deletion a permanent
+hard failure. Verification therefore compares the **fetch** against the control
+aggregation, and the file count is logged for information only:
+
+* ``0`` — OK. ``len(fetched rows) == control count`` for every selected date.
+  This includes the archive-superset case (file row count > control count),
+  which is logged as an informational note, not an anomaly.
+* ``1`` — genuine verification mismatch: a date's fetched row count disagrees
+  with the control aggregation, or a per-``negeri`` chunk disagreed with its own
+  control count. The data we just fetched is incomplete/unexpected.
+* ``2`` — fetch/transport/decode failure (:class:`~scraper.powerbi.PowerBIError`,
+  including :class:`~scraper.powerbi.QueryError`), or the source returned no
+  dates at all. Nothing was verified because nothing usable arrived.
 """
 
 from __future__ import annotations
@@ -32,6 +53,7 @@ import sys
 from .powerbi import (
     ENTITY,
     PowerBIClient,
+    PowerBIError,
     aggregation,
     column_ref,
     datetime_equals,
@@ -116,14 +138,44 @@ def read_csv(path: str) -> dict:
     return out
 
 
-def merge_records(existing: dict, incoming) -> list:
-    """Overwrite by ``priceid``, add new rows, return sorted list of records."""
+def merge_records(existing: dict, incoming, stats: dict | None = None) -> list:
+    """Merge by ``priceid``, add new rows, return sorted list of records.
+
+    Non-empty incoming values overwrite the archived ones (late corrections are
+    the point of re-fetching the whole window). **Empty incoming values do not**:
+    a degraded upstream response — right row count, blanked columns — would
+    otherwise silently destroy good archived data, pass the control-count check
+    and get committed, becoming unrecoverable once the source's 30-day window
+    rolls past. When the incoming value for a column is empty and the archived
+    one is not, the archived value is kept.
+
+    ``stats`` (optional dict) is filled with:
+
+    * ``preserved_fields`` — number of individual field values kept
+    * ``preserved_rows``   — number of rows in which at least one was kept
+    """
     merged = dict(existing)
+    preserved_fields = 0
+    preserved_rows = 0
     for record in incoming:
         priceid = record.get("priceid") or ""
         if not priceid:
             continue
-        merged[priceid] = {col: record.get(col, "") for col in CSV_COLUMNS}
+        new = {col: record.get(col, "") for col in CSV_COLUMNS}
+        old = merged.get(priceid)
+        if old is not None:
+            kept = 0
+            for col in CSV_COLUMNS:
+                if not (new.get(col) or "").strip() and (old.get(col) or "").strip():
+                    new[col] = old[col]
+                    kept += 1
+            if kept:
+                preserved_fields += kept
+                preserved_rows += 1
+        merged[priceid] = new
+    if stats is not None:
+        stats["preserved_fields"] = preserved_fields
+        stats["preserved_rows"] = preserved_rows
     return sorted(merged.values(), key=lambda r: priceid_sort_key(r["priceid"]))
 
 
@@ -141,7 +193,8 @@ def write_csv(path: str, records) -> None:
 def merge_into_file(path: str, incoming) -> dict:
     """Merge ``incoming`` records into ``path``. Returns a small stats dict."""
     existing = read_csv(path)
-    merged = merge_records(existing, incoming)
+    merge_stats: dict = {}
+    merged = merge_records(existing, incoming, stats=merge_stats)
     before = len(existing)
     changed = merged != sorted(
         existing.values(), key=lambda r: priceid_sort_key(r["priceid"])
@@ -154,6 +207,8 @@ def merge_into_file(path: str, incoming) -> dict:
         "after": len(merged),
         "added": len(merged) - before,
         "changed": changed,
+        "preserved_fields": merge_stats.get("preserved_fields", 0),
+        "preserved_rows": merge_stats.get("preserved_rows", 0),
     }
 
 
@@ -282,6 +337,11 @@ def fetch_date(
 # CLI
 # --------------------------------------------------------------------------
 def run(argv=None) -> int:
+    """CLI entry point. See the module docstring for the exit-code contract.
+
+    Exit codes: ``0`` OK (archive-superset included), ``1`` genuine verification
+    mismatch (fetched != control), ``2`` fetch/transport/decode failure.
+    """
     parser = argparse.ArgumentParser(
         prog="python -m scraper.scrape",
         description="Fetch the FAMA rolling price window into data/daily/*.csv",
@@ -309,7 +369,11 @@ def run(argv=None) -> int:
     client = PowerBIClient(timeout=args.timeout, min_interval=args.min_interval)
 
     print("discovering available dates (control aggregation)...")
-    date_counts = fetch_date_counts(client)
+    try:
+        date_counts = fetch_date_counts(client)
+    except PowerBIError as exc:
+        print("ERROR: control aggregation failed: %s" % (exc,), file=sys.stderr)
+        return 2
     if not date_counts:
         print("ERROR: no dates returned by the source", file=sys.stderr)
         return 2
@@ -335,35 +399,76 @@ def run(argv=None) -> int:
 
     table = []
     anomalies = []
+    notes = []
     total_written = 0
+    total_preserved_fields = 0
+    total_preserved_rows = 0
     for date_str, expected in selected:
-        records, info = fetch_date(
-            client, date_str, expected=expected, top=args.top
-        )
+        try:
+            records, info = fetch_date(
+                client, date_str, expected=expected, top=args.top
+            )
+        except PowerBIError as exc:
+            print("ERROR: fetch failed for %s: %s" % (date_str, exc), file=sys.stderr)
+            return 2
         path = os.path.join(args.out_dir, "%s.csv" % date_str)
         if args.dry_run:
-            stats = {"after": len(records), "added": 0, "changed": False}
+            stats = {
+                "after": len(records), "added": 0, "changed": False,
+                "preserved_fields": 0, "preserved_rows": 0,
+            }
         else:
             stats = merge_into_file(path, records)
         written = stats["after"]
+        fetched = len(records)
         total_written += written
+        total_preserved_fields += stats.get("preserved_fields", 0)
+        total_preserved_rows += stats.get("preserved_rows", 0)
+
+        # --- verification: the FETCH against the control aggregation ---------
         status = "ok"
-        if written != expected:
+        if fetched != expected:
             status = "MISMATCH"
             anomalies.append(
-                "%s: control=%d file=%d fetched=%d"
-                % (date_str, expected, written, len(records))
+                "%s: control=%d fetched=%d (file=%d)"
+                % (date_str, expected, fetched, written)
             )
         if info["chunk_mismatches"]:
             status = "MISMATCH"
             anomalies.append(
                 "%s: per-negeri mismatches %r" % (date_str, info["chunk_mismatches"])
             )
+
+        # --- informational: archive vs upstream ------------------------------
+        # The archive keeps rows upstream has since deleted; that is expected
+        # and must never fail the run.
+        if written > expected:
+            if status == "ok":
+                status = "ok+archive"
+            notes.append(
+                "%s: archive is a superset of upstream (file=%d > control=%d, "
+                "+%d row(s) upstream no longer serves)"
+                % (date_str, written, expected, written - expected)
+            )
+        elif written < expected and status == "ok":
+            # Fetch matched control but fewer rows landed: duplicate priceids.
+            notes.append(
+                "%s: file=%d < control=%d although fetched=%d matched "
+                "(duplicate priceids in the response?)"
+                % (date_str, written, expected, fetched)
+            )
+        if stats.get("preserved_fields"):
+            notes.append(
+                "%s: kept %d archived field value(s) across %d row(s) where the "
+                "incoming response was empty"
+                % (date_str, stats["preserved_fields"], stats["preserved_rows"])
+            )
+
         table.append(
             {
                 "date": date_str,
                 "expected": expected,
-                "fetched": len(records),
+                "fetched": fetched,
                 "written": written,
                 "chunked": info["chunked"],
                 "status": status,
@@ -371,7 +476,7 @@ def run(argv=None) -> int:
         )
         print(
             "  %s expected=%-6d fetched=%-6d file=%-6d chunked=%-5s %s"
-            % (date_str, expected, len(records), written, info["chunked"], status)
+            % (date_str, expected, fetched, written, info["chunked"], status)
         )
 
     print("")
@@ -389,12 +494,30 @@ def run(argv=None) -> int:
             )
         )
     print(
-        "%-12s %10d %10s %10d"
-        % ("TOTAL", sum(e["expected"] for e in table), "", total_written)
+        "%-12s %10d %10d %10d"
+        % (
+            "TOTAL",
+            sum(e["expected"] for e in table),
+            sum(e["fetched"] for e in table),
+            total_written,
+        )
     )
 
+    if total_preserved_fields:
+        print(
+            "\nWARNING: kept %d archived field value(s) across %d row(s) because the "
+            "incoming response had them empty (possible degraded upstream response)."
+            % (total_preserved_fields, total_preserved_rows),
+            file=sys.stderr,
+        )
+
+    if notes:
+        print("\nNOTES (informational, not failures):")
+        for line in notes:
+            print("  " + line)
+
     if anomalies:
-        print("\nANOMALIES:", file=sys.stderr)
+        print("\nANOMALIES (fetch does not match control aggregation):", file=sys.stderr)
         for line in anomalies:
             print("  " + line, file=sys.stderr)
         return 1

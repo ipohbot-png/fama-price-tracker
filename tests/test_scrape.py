@@ -10,6 +10,7 @@ import pytest
 
 from scraper import scrape
 from scraper.scrape import (
+    PowerBIError,
     CSV_COLUMNS,
     SOURCE_COLUMNS,
     format_value,
@@ -111,6 +112,67 @@ def test_merge_adds_new_and_overwrites_existing_by_priceid():
     assert [r["priceid"] for r in merged] == ["2", "3", "10"]
     assert merged[0]["harga"] == "1.50"
     assert merged[2]["harga"] == "2.00"
+
+
+def test_merge_keeps_archived_value_when_incoming_field_is_empty():
+    """A degraded upstream response must never blank good archived data."""
+    existing = {"1": make_record("1", negeri="PERAK", harga="1.00", lokasi="PASAR1")}
+    incoming = [make_record("1", negeri="", harga="", lokasi="")]
+
+    merged = merge_records(existing, incoming)
+    assert merged[0]["negeri"] == "PERAK"
+    assert merged[0]["harga"] == "1.00"
+    assert merged[0]["lokasi"] == "PASAR1"
+
+
+def test_merge_still_overwrites_with_non_empty_incoming_values():
+    existing = {"1": make_record("1", harga="1.00", negeri="PERAK")}
+    incoming = [make_record("1", harga="1.25", negeri="")]
+
+    merged = merge_records(existing, incoming)
+    assert merged[0]["harga"] == "1.25"   # correction applied
+    assert merged[0]["negeri"] == "PERAK"  # empty did not blank it
+
+
+def test_merge_reports_preserved_field_and_row_counts():
+    existing = {
+        "1": make_record("1", negeri="PERAK", harga="1.00"),
+        "2": make_record("2", negeri="KEDAH", harga="2.00"),
+    }
+    incoming = [
+        make_record("1", negeri="", harga=""),      # 2 fields preserved
+        make_record("2", negeri="KEDAH", harga=""),  # 1 field preserved
+        make_record("3", negeri="", harga=""),      # new row: nothing to preserve
+    ]
+    stats = {}
+    merge_records(existing, incoming, stats=stats)
+    assert stats == {"preserved_fields": 3, "preserved_rows": 2}
+
+
+def test_merge_preserves_nothing_when_incoming_is_complete():
+    existing = {"1": make_record("1", negeri="PERAK", harga="1.00")}
+    stats = {}
+    merge_records(existing, [make_record("1", negeri="PERAK", harga="1.10")], stats=stats)
+    assert stats == {"preserved_fields": 0, "preserved_rows": 0}
+
+
+def test_whitespace_only_incoming_counts_as_empty():
+    existing = {"1": make_record("1", negeri="PERAK")}
+    merged = merge_records(existing, [make_record("1", negeri="   ")])
+    assert merged[0]["negeri"] == "PERAK"
+
+
+def test_merge_into_file_does_not_blank_archived_row(tmp_path):
+    path = str(tmp_path / "2026-07-25.csv")
+    merge_into_file(path, [make_record("1", negeri="PERAK", harga="1.00")])
+
+    # Upstream returns the row with everything blanked out.
+    stats = merge_into_file(path, [make_record("1", negeri="", harga="")])
+    assert stats["preserved_fields"] == 2
+    assert stats["preserved_rows"] == 1
+    assert stats["changed"] is False          # nothing was lost -> nothing rewritten
+    assert read_csv(path)["1"]["harga"] == "1.00"
+    assert read_csv(path)["1"]["negeri"] == "PERAK"
 
 
 def test_merge_drops_rows_without_priceid():
@@ -273,3 +335,125 @@ def test_fetch_date_chunks_on_count_mismatch_and_reports_residual(monkeypatch):
     records, info = scrape.fetch_date(None, "2026-07-25", expected=5, log=lambda *_: None)
     assert info["chunked"] is True
     assert info["chunk_mismatches"] == [("PERAK", 5, 1)]
+
+
+# --------------------------------------------------------------------------
+# run() verification + exit codes (stubbed client, no network)
+#
+# Exit codes: 0 = OK (archive-superset included), 1 = fetched != control,
+#             2 = fetch/transport/decode failure.
+# --------------------------------------------------------------------------
+def stub_run(monkeypatch, date_counts, fetch_impl):
+    monkeypatch.setattr(scrape, "PowerBIClient", lambda **kwargs: object())
+    monkeypatch.setattr(scrape, "fetch_date_counts", lambda client: date_counts)
+    monkeypatch.setattr(scrape, "fetch_date", fetch_impl)
+
+
+def _fetch_ok(rows, chunk_mismatches=()):
+    def impl(client, date_str, expected=None, top=30000, entity=None, log=print):
+        info = {
+            "date": date_str, "expected": expected, "chunked": False,
+            "chunk_mismatches": list(chunk_mismatches), "rows": len(rows),
+        }
+        return list(rows), info
+    return impl
+
+
+def test_run_exits_zero_when_upstream_deleted_rows_the_archive_still_has(
+    tmp_path, monkeypatch, capsys
+):
+    """Regression for the pipeline-killing bug.
+
+    The archive is a superset of upstream: a row deleted upstream stays in our
+    committed CSV forever, so file (3) > control (2). That must be a note, not
+    a failure -- the old code compared the merged file count against the control
+    count and exited 1 on every subsequent run, skipping the aggregate/commit
+    steps of the daily workflow.
+    """
+    path = str(tmp_path / "2026-07-25.csv")
+    write_csv(path, [make_record(p) for p in ("1", "2", "3")])
+
+    # Upstream now serves only rows 1 and 2 -- row 3 was deleted upstream.
+    stub_run(monkeypatch, [("2026-07-25", 2)],
+             _fetch_ok([make_record("1"), make_record("2")]))
+
+    code = scrape.run(["--out-dir", str(tmp_path)])
+    out = capsys.readouterr()
+    assert code == 0
+    assert "archive is a superset" in out.out
+    # The deleted row is still archived.
+    assert set(read_csv(path)) == {"1", "2", "3"}
+
+
+def test_run_exits_one_when_fetch_disagrees_with_control(tmp_path, monkeypatch, capsys):
+    stub_run(monkeypatch, [("2026-07-25", 5)],
+             _fetch_ok([make_record("1"), make_record("2")]))
+
+    code = scrape.run(["--out-dir", str(tmp_path)])
+    err = capsys.readouterr().err
+    assert code == 1
+    assert "control=5 fetched=2" in err
+
+
+def test_run_exits_one_on_per_negeri_chunk_mismatch(tmp_path, monkeypatch, capsys):
+    stub_run(monkeypatch, [("2026-07-25", 1)],
+             _fetch_ok([make_record("1")], chunk_mismatches=[("PERAK", 5, 1)]))
+
+    code = scrape.run(["--out-dir", str(tmp_path)])
+    assert code == 1
+    assert "per-negeri mismatches" in capsys.readouterr().err
+
+
+def test_run_exits_zero_when_everything_matches(tmp_path, monkeypatch, capsys):
+    stub_run(monkeypatch, [("2026-07-25", 2)],
+             _fetch_ok([make_record("1"), make_record("2")]))
+
+    code = scrape.run(["--out-dir", str(tmp_path)])
+    out = capsys.readouterr().out
+    assert code == 0
+    assert "MISMATCH" not in out
+
+
+def test_run_exits_two_when_control_aggregation_fails(tmp_path, monkeypatch, capsys):
+    def boom(client):
+        raise PowerBIError("HTTP 503 from querydata")
+
+    monkeypatch.setattr(scrape, "PowerBIClient", lambda **kwargs: object())
+    monkeypatch.setattr(scrape, "fetch_date_counts", boom)
+
+    code = scrape.run(["--out-dir", str(tmp_path)])
+    assert code == 2
+    assert "control aggregation failed" in capsys.readouterr().err
+
+
+def test_run_exits_two_when_a_date_fetch_fails(tmp_path, monkeypatch, capsys):
+    def boom(client, date_str, expected=None, top=30000, entity=None, log=print):
+        raise PowerBIError("querydata request failed")
+
+    stub_run(monkeypatch, [("2026-07-25", 2)], boom)
+
+    code = scrape.run(["--out-dir", str(tmp_path)])
+    assert code == 2
+    assert "fetch failed for 2026-07-25" in capsys.readouterr().err
+
+
+def test_run_exits_two_when_source_returns_no_dates(tmp_path, monkeypatch, capsys):
+    stub_run(monkeypatch, [], _fetch_ok([]))
+    assert scrape.run(["--out-dir", str(tmp_path)]) == 2
+
+
+def test_run_warns_but_succeeds_when_archived_fields_are_preserved(
+    tmp_path, monkeypatch, capsys
+):
+    path = str(tmp_path / "2026-07-25.csv")
+    write_csv(path, [make_record("1", negeri="PERAK", harga="1.00")])
+
+    # Degraded response: right row count, blanked columns.
+    stub_run(monkeypatch, [("2026-07-25", 1)],
+             _fetch_ok([make_record("1", negeri="", harga="")]))
+
+    code = scrape.run(["--out-dir", str(tmp_path)])
+    err = capsys.readouterr().err
+    assert code == 0
+    assert "kept 2 archived field value(s)" in err
+    assert read_csv(path)["1"]["harga"] == "1.00"

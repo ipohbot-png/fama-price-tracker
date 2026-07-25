@@ -37,6 +37,7 @@ from __future__ import annotations
 import datetime as _dt
 import gzip
 import json
+import os
 import random
 import time
 import urllib.error
@@ -59,19 +60,59 @@ __all__ = [
     "MODEL_ID",
     "DATASET_ID",
     "ENTITY",
+    "env_str",
+    "env_int",
 ]
 
 # --------------------------------------------------------------------------
 # FAMA report coordinates (see DESIGN.md section 1)
+#
+# The report coordinates are baked in as constants, but FAMA can re-publish the
+# report (new resource key / dataset id) or rename the entity at any time. Each
+# constant is therefore overridable from the environment so a broken pipeline
+# can be repointed without a code change:
+#
+#     FAMA_RESOURCE_KEY   -> RESOURCE_KEY   (header X-PowerBI-ResourceKey)
+#     FAMA_MODEL_ID       -> MODEL_ID       (integer; bad values fall back)
+#     FAMA_DATASET_ID     -> DATASET_ID     (ApplicationContext.DatasetId)
+#     FAMA_ENTITY         -> ENTITY         (semantic-query From[].Entity)
+#
+# Unset, empty and whitespace-only values all mean "use the constant".
 # --------------------------------------------------------------------------
+DEFAULT_RESOURCE_KEY = "b41dccd7-d9f7-4f56-80fe-127696493f53"
+DEFAULT_MODEL_ID = 6546643
+DEFAULT_DATASET_ID = "185b7047-f327-4ef7-897a-3168956a1850"
+DEFAULT_ENTITY = "API Harga (30hari)"
+
+
+def env_str(name: str, default: str) -> str:
+    """Environment override for a string constant (blank/unset -> default)."""
+    value = os.environ.get(name)
+    if value is None:
+        return default
+    value = value.strip()
+    return value or default
+
+
+def env_int(name: str, default: int) -> int:
+    """Environment override for an int constant (blank/unset/invalid -> default)."""
+    value = os.environ.get(name)
+    if value is None or not value.strip():
+        return default
+    try:
+        return int(value.strip())
+    except ValueError:
+        return default
+
+
 API_URL = (
     "https://wabi-south-east-asia-api.analysis.windows.net"
     "/public/reports/querydata?synchronous=true"
 )
-RESOURCE_KEY = "b41dccd7-d9f7-4f56-80fe-127696493f53"
-MODEL_ID = 6546643
-DATASET_ID = "185b7047-f327-4ef7-897a-3168956a1850"
-ENTITY = "API Harga (30hari)"
+RESOURCE_KEY = env_str("FAMA_RESOURCE_KEY", DEFAULT_RESOURCE_KEY)
+MODEL_ID = env_int("FAMA_MODEL_ID", DEFAULT_MODEL_ID)
+DATASET_ID = env_str("FAMA_DATASET_ID", DEFAULT_DATASET_ID)
+ENTITY = env_str("FAMA_ENTITY", DEFAULT_ENTITY)
 
 USER_AGENT = (
     "fama-price-tracker/1.0 (+https://github.com/; open-data archiver; "

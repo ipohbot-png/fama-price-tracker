@@ -98,7 +98,7 @@ priceid,tarikh_harga,systemdate,negeri,daerah,lokasi,peringkat,sublevel,kategori
   - `price` = last non-null national mean on or before max date, looking back ≤14 days; `date` = that reading's date; `n` = row count behind the mean.
   - `dod` = `price` minus the previous available non-null point strictly before `date`; `dod_from` = that point's date; null if none.
   - `wow` = `price` minus nearest non-null point on or before `date - 7 days`; `wow_from` = its date; null if none.
-  - `reliable` = false when the dod comparison is distorted by basket change: prev point's `n` differs by >50% or the contributing state set differs; UI must exclude `reliable:false` rows from Top Movers (still shown in the table).
+  - `reliable` = false when the dod comparison is distorted by basket change: prev point's `n` differs by >50% or the contributing state sets' Jaccard overlap < 50% (exact set equality proved too strict — FAMA rotates surveyed states week to week); UI must exclude `reliable:false` rows from Top Movers (still shown in the table).
 - `latest_state/<STATE>.json` — same shape as `latest.json`, computed over that state's rows only
   (one file per state in catalog `states`). UI state scopes MUST use these, not client-side series scans.
 - `meta.json` — `{ "generated_at_utc", "window": {...}, "row_count", "update_times": {"by_hour": {"00".."23": count}, "median_entry_local": "HH:MM", "note"}, "source": "..." }`

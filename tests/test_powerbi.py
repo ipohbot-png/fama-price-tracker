@@ -4,8 +4,10 @@ from __future__ import annotations
 
 import datetime as _dt
 import gzip
+import importlib
 import io
 import json
+import os
 
 import pytest
 
@@ -437,3 +439,65 @@ def test_detail_query_projects_every_column():
     assert command["Binding"]["Primary"]["Groupings"][0]["Projections"] == [0, 1]
     assert command["Binding"]["DataReduction"]["Primary"]["Top"]["Count"] == 123
     assert "Where" not in command["Query"]
+
+
+# --------------------------------------------------------------------------
+# environment overrides for the report coordinates
+# --------------------------------------------------------------------------
+ENV_NAMES = ("FAMA_RESOURCE_KEY", "FAMA_MODEL_ID", "FAMA_DATASET_ID", "FAMA_ENTITY")
+
+
+def test_env_str_prefers_environment_but_ignores_blanks(monkeypatch):
+    monkeypatch.delenv("FAMA_ENTITY", raising=False)
+    assert powerbi.env_str("FAMA_ENTITY", "default") == "default"
+    monkeypatch.setenv("FAMA_ENTITY", "   ")
+    assert powerbi.env_str("FAMA_ENTITY", "default") == "default"
+    monkeypatch.setenv("FAMA_ENTITY", "  Other Entity  ")
+    assert powerbi.env_str("FAMA_ENTITY", "default") == "Other Entity"
+
+
+def test_env_int_falls_back_on_missing_blank_or_invalid(monkeypatch):
+    monkeypatch.delenv("FAMA_MODEL_ID", raising=False)
+    assert powerbi.env_int("FAMA_MODEL_ID", 7) == 7
+    monkeypatch.setenv("FAMA_MODEL_ID", "")
+    assert powerbi.env_int("FAMA_MODEL_ID", 7) == 7
+    monkeypatch.setenv("FAMA_MODEL_ID", "not-a-number")
+    assert powerbi.env_int("FAMA_MODEL_ID", 7) == 7
+    monkeypatch.setenv("FAMA_MODEL_ID", " 42 ")
+    assert powerbi.env_int("FAMA_MODEL_ID", 7) == 42
+
+
+def test_module_constants_are_env_overridable():
+    """The real constants are read from the environment at import time."""
+    saved = {name: os.environ.get(name) for name in ENV_NAMES}
+    os.environ.update({
+        "FAMA_RESOURCE_KEY": "key-from-env",
+        "FAMA_MODEL_ID": "99",
+        "FAMA_DATASET_ID": "dataset-from-env",
+        "FAMA_ENTITY": "API Harga (test)",
+    })
+    try:
+        mod = importlib.reload(powerbi)
+        assert mod.RESOURCE_KEY == "key-from-env"
+        assert mod.MODEL_ID == 99
+        assert mod.DATASET_ID == "dataset-from-env"
+        assert mod.ENTITY == "API Harga (test)"
+        # The client picks them up through its defaults.
+        client = mod.PowerBIClient()
+        assert client.resource_key == "key-from-env"
+        assert client.model_id == 99
+        assert client.dataset_id == "dataset-from-env"
+    finally:
+        for name, value in saved.items():
+            if value is None:
+                os.environ.pop(name, None)
+            else:
+                os.environ[name] = value
+        importlib.reload(powerbi)
+
+
+def test_constants_fall_back_to_the_documented_defaults():
+    assert powerbi.RESOURCE_KEY == powerbi.DEFAULT_RESOURCE_KEY == "b41dccd7-d9f7-4f56-80fe-127696493f53"
+    assert powerbi.MODEL_ID == powerbi.DEFAULT_MODEL_ID == 6546643
+    assert powerbi.DATASET_ID == powerbi.DEFAULT_DATASET_ID == "185b7047-f327-4ef7-897a-3168956a1850"
+    assert powerbi.ENTITY == powerbi.DEFAULT_ENTITY == "API Harga (30hari)"
