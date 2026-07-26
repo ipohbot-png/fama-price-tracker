@@ -366,10 +366,12 @@
   }
 
   function lineSeries(t, name, data, color, withEndLabel) {
-    // A point with null neighbours on both sides draws no line segment, so it is
-    // invisible unless symbols are shown (e.g. weekly-surveyed products: readings
-    // every 7 days, nulls between). Show dots whenever the series has any such
-    // isolated reading.
+    // Sparse series (weekly-surveyed products: readings every ~7 days, nulls
+    // between) would be invisible as a plain line: an isolated point has no
+    // neighbour to form a segment with, and symbols are hidden by default.
+    // For those, show dots at the actual readings and connect them with a
+    // DASHED line — the dashes signal "no collection on the days between",
+    // while dense daily series keep solid lines with honest gaps.
     var isolated = data.some(function (v, i) {
       return v != null &&
         (i === 0 || data[i - 1] == null) &&
@@ -377,12 +379,14 @@
     });
     return {
       name: name, type: 'line', data: data,
-      connectNulls: false,          // null = no reading → gap the line, never zero
+      connectNulls: isolated,       // sparse: bridge uncollected days (dashed below);
+                                    // dense: null = no reading → gap, never zero
       showSymbol: isolated,
       symbol: 'circle',
       symbolSize: isolated ? 7 : 9, // ≥8px marker on hover; visible dots when sparse
       sampling: 'lttb',
-      lineStyle: { width: 2, cap: 'round', join: 'round', color: color },
+      lineStyle: { width: isolated ? 1.5 : 2, cap: 'round', join: 'round', color: color,
+                   type: isolated ? [4, 4] : 'solid' },
       itemStyle: { color: color, borderColor: t.surface, borderWidth: 2 }, // 2px surface ring
       emphasis: { focus: 'series', scale: 1.1 },
       endLabel: withEndLabel ? {
@@ -907,10 +911,10 @@
         if (missing.length) {
           chartCard.appendChild(h('p', { class: 'card__note', style: 'margin:8px 0 0',
             text: 'Not collected for ' + scopeName + ': ' + missing.join(', ') +
-              '. Line breaks mean no price was collected that day.' }));
+              '. Solid line breaks mean no price was collected that day; dashed lines join dots of weekly readings across uncollected days.' }));
         } else {
           chartCard.appendChild(h('p', { class: 'card__note', style: 'margin:8px 0 0',
-            text: 'Line breaks mean no price was collected that day.' }));
+            text: 'Solid line breaks mean no price was collected that day; dashed lines join dots of weekly readings across uncollected days.' }));
         }
 
         if (ui.detail.table) {
@@ -1093,7 +1097,7 @@
         }
         var dropped = seriesList.length - live.length;
         if (dropped > 0) notes.push(dropped + ' selected product(s) have no data here and are not drawn.');
-        notes.push('Line breaks mean no price was collected that day.');
+        notes.push('Solid line breaks mean no price was collected that day; dashed lines join dots of weekly readings across uncollected days.');
         chartCard.appendChild(h('p', { class: 'card__note', style: 'margin:8px 0 0', text: notes.join(' ') }));
 
         chartCard.appendChild(h('div', { class: 'filters', style: 'margin:10px 0 0' }, [
