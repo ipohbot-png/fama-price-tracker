@@ -366,12 +366,21 @@
   }
 
   function lineSeries(t, name, data, color, withEndLabel) {
+    // A point with null neighbours on both sides draws no line segment, so it is
+    // invisible unless symbols are shown (e.g. weekly-surveyed products: readings
+    // every 7 days, nulls between). Show dots whenever the series has any such
+    // isolated reading.
+    var isolated = data.some(function (v, i) {
+      return v != null &&
+        (i === 0 || data[i - 1] == null) &&
+        (i === data.length - 1 || data[i + 1] == null);
+    });
     return {
       name: name, type: 'line', data: data,
       connectNulls: false,          // null = no reading → gap the line, never zero
-      showSymbol: false,
+      showSymbol: isolated,
       symbol: 'circle',
-      symbolSize: 9,                // ≥8px marker on hover
+      symbolSize: isolated ? 7 : 9, // ≥8px marker on hover; visible dots when sparse
       sampling: 'lttb',
       lineStyle: { width: 2, cap: 'round', join: 'round', color: color },
       itemStyle: { color: color, borderColor: t.surface, borderWidth: 2 }, // 2px surface ring
