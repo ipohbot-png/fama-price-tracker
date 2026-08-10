@@ -109,6 +109,24 @@
    ]
   },
   {
+   "id": "ayam-tua-penelur-hidup",
+   "name": "AYAM TUA / PENELUR HIDUP",
+   "kategori": "Ternakan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ]
+  },
+  {
+   "id": "ayam-tua-penelur-proses",
+   "name": "AYAM TUA / PENELUR PROSES",
+   "kategori": "Ternakan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ]
+  },
+  {
    "id": "ayam-tua-hidup",
    "name": "AYAM TUA HIDUP",
    "kategori": "Ternakan",
@@ -840,6 +858,15 @@
   {
    "id": "hati-lembu-tempatan",
    "name": "HATI (LEMBU TEMPATAN)",
+   "kategori": "Ternakan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ]
+  },
+  {
+   "id": "hati-lembu",
+   "name": "HATI LEMBU",
    "kategori": "Ternakan",
    "unit": "Kilogram",
    "grades": [
@@ -1639,6 +1666,15 @@
    ]
   },
   {
+   "id": "limpa-lembu",
+   "name": "LIMPA LEMBU",
+   "kategori": "Ternakan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ]
+  },
+  {
    "id": "lobak-merah-china",
    "name": "LOBAK MERAH (CHINA)",
    "kategori": "Sayur-Sayuran",
@@ -1846,6 +1882,15 @@
    ]
   },
   {
+   "id": "paru-lembu",
+   "name": "PARU LEMBU",
+   "kategori": "Ternakan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ]
+  },
+  {
    "id": "pegaga",
    "name": "PEGAGA",
    "kategori": "Sayur-Sayuran",
@@ -1875,6 +1920,15 @@
   {
    "id": "perut-lembu-tempatan",
    "name": "PERUT (LEMBU TEMPATAN)",
+   "kategori": "Ternakan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ]
+  },
+  {
+   "id": "perut-bulat-muda-usus-lembu",
+   "name": "PERUT BULAT / MUDA / USUS LEMBU",
    "kategori": "Ternakan",
    "unit": "Kilogram",
    "grades": [
@@ -2118,6 +2172,15 @@
   {
    "id": "sawi-bunga",
    "name": "SAWI BUNGA",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ]
+  },
+  {
+   "id": "sawi-hijau",
+   "name": "SAWI HIJAU",
    "kategori": "Sayur-Sayuran",
    "unit": "Kilogram",
    "grades": [
@@ -2532,6 +2595,6 @@
  ],
  "dates": {
   "min": "2026-06-27",
-  "max": "2026-08-06"
+  "max": "2026-08-10"
  }
 }
