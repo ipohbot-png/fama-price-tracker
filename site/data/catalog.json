@@ -1099,6 +1099,15 @@
    ]
   },
   {
+   "id": "kacang-panjang-import",
+   "name": "KACANG PANJANG (IMPORT)",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ]
+  },
+  {
    "id": "kacang-panjang-hijau",
    "name": "KACANG PANJANG HIJAU",
    "kategori": "Sayur-Sayuran",
@@ -1776,6 +1785,15 @@
   {
    "id": "manggis",
    "name": "MANGGIS",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ]
+  },
+  {
+   "id": "manggis-import-2",
+   "name": "MANGGIS (IMPORT)",
    "kategori": "Buah-Buahan",
    "unit": "Kilogram",
    "grades": [
@@ -2595,6 +2613,6 @@
  ],
  "dates": {
   "min": "2026-06-27",
-  "max": "2026-08-10"
+  "max": "2026-08-11"
  }
 }
