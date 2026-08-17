@@ -1702,6 +1702,15 @@
    ]
   },
   {
+   "id": "longan-kristal",
+   "name": "LONGAN KRISTAL",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ]
+  },
+  {
    "id": "mangga-chokanan-ma224",
    "name": "MANGGA CHOKANAN (MA224)",
    "kategori": "Buah-Buahan",
@@ -2613,6 +2622,6 @@
  ],
  "dates": {
   "min": "2026-06-27",
-  "max": "2026-08-16"
+  "max": "2026-08-17"
  }
 }
