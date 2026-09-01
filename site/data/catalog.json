@@ -1738,6 +1738,15 @@
    ]
   },
   {
+   "id": "mangga-harumanis-ma128",
+   "name": "MANGGA HARUMANIS (MA128)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ]
+  },
+  {
    "id": "mangga-harumanis-thailand",
    "name": "MANGGA HARUMANIS (THAILAND)",
    "kategori": "Buah-Buahan",
@@ -1758,6 +1767,15 @@
   {
    "id": "mangga-mas-hitam-thong-dam-thailand",
    "name": "MANGGA MAS HITAM/THONG DAM (THAILAND)",
+   "kategori": "Buah-Buahan",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ]
+  },
+  {
+   "id": "mangga-sala-perlis-sunshine",
+   "name": "MANGGA SALA / PERLIS SUNSHINE",
    "kategori": "Buah-Buahan",
    "unit": "Kilogram",
    "grades": [
