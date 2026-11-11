@@ -2098,6 +2098,15 @@
    ]
   },
   {
+   "id": "pucuk-maman",
+   "name": "PUCUK MAMAN",
+   "kategori": "Sayur-Sayuran",
+   "unit": "Kilogram",
+   "grades": [
+    "F.A.Q"
+   ]
+  },
+  {
    "id": "pucuk-paku",
    "name": "PUCUK PAKU",
    "kategori": "Sayur-Sayuran",
@@ -2640,6 +2649,6 @@
  ],
  "dates": {
   "min": "2026-06-27",
-  "max": "2026-11-10"
+  "max": "2026-11-11"
  }
 }
